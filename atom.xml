@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>徐费费</title>
   <id>http://xfhrv.cn/</id>
-  <updated>2015-11-05T03:49:54+08:00</updated>
+  <updated>2015-11-05T16:12:43+08:00</updated>
   <subtitle>一个没有灵魂的躯壳</subtitle>
   <link href="http://xfhrv.cn/"></link>
   <author>
     <name>徐费费</name>
   </author>
+  <entry>
+    <title>好用的Excel宏</title>
+    <updated>2015-11-05T16:13:00+08:00</updated>
+    <id>tag:,2015-11-05:/xfhrv.cn/post/2015/11/05/excel_macros.html</id>
+    <content type="html"></content>
+    <link href="http:/xfhrv.cn/post/2015/11/05/excel_macros.html"></link>
+    <author>
+      <name>徐费费</name>
+    </author>
+  </entry>
   <entry>
     <title>Day 1 乱写一通</title>
     <updated>2015-11-05T03:13:00+08:00</updated>

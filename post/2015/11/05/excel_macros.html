@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+        <meta name="keywords" content="work,">
+        <meta name="description" content="好用的Excel宏">
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/github.css">
+        <title>好用的Excel宏</title>
+    </head>
+    <body>
+        <article class="container">
+            <a class="index" href="/">徐费费</a>
+<ul class="menu">
+	<li class="menu-item"><a href="/resume.html">简历</a></li>
+    <li class="menu-item"><a href="/archive.html">归档</a></li>
+    <li class="menu-item"><a href="/tag.html">标签</a></li>
+    <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+</ul>
+
+            <article class="main article">
+                <h1 class="title">好用的Excel宏</h1>
+                <section class="info">
+                    <span class="avatar" style="background-image: url(/images/avatar.jpg);"></span>
+                    <a class="name" href="/resume.html">徐费费</a>
+                    <span class="date" data-time="1446693360">
+                        <span class="from"></span>
+                        <span class="date" data-time="1446711180">(<span class="from"></span> 更新)</span>
+                    </span>
+                    <span class="tags"><a class="tag" href="/tag/work/index.html">work</a></span>
+                </section>
+                <article class="content"><p>Excel的Macros真心强大！</p>
+
+<p>刚刚工作的时候想批量复制Sheets，依次按数字序列1,2,3,……,N命名排序，顺手百度上一搜就出来了以下代码</p>
+
+<pre><code>&lt;span class=&quot;hljs-tag&quot;&gt;&lt;&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;hljs-keyword&quot;&lt;/span&gt;&gt;&lt;/span&gt;Sub&lt;span class=&quot;hljs-tag&quot;&gt;&lt;/&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt;&gt;&lt;/span&gt; test()
+    &lt;span class=&quot;hljs-tag&quot;&gt;&lt;&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;hljs-keyword&quot;&lt;/span&gt;&gt;&lt;/span&gt;For&lt;span class=&quot;hljs-tag&quot;&gt;&lt;/&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt;&gt;&lt;/span&gt; i = &lt;span class=&quot;hljs-tag&quot;&gt;&lt;&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;hljs-number&quot;&lt;/span&gt;&gt;&lt;/span&gt;2&lt;span class=&quot;hljs-tag&quot;&gt;&lt;/&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt;&gt;&lt;/span&gt; &lt;span class=&quot;hljs-tag&quot;&gt;&lt;&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;hljs-keyword&quot;&lt;/span&gt;&gt;&lt;/span&gt;To&lt;span class=&quot;hljs-tag&quot;&gt;&lt;/&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt;&gt;&lt;/span&gt; &lt;span class=&quot;hljs-tag&quot;&gt;&lt;&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;hljs-number&quot;&lt;/span&gt;&gt;&lt;/span&gt;12&lt;span class=&quot;hljs-tag&quot;&gt;&lt;/&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt;&gt;&lt;/span&gt;
+    ActiveSheet.Copy After:=ActiveSheet
+    ActiveSheet.Name = i
+    &lt;span class=&quot;hljs-tag&quot;&gt;&lt;&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;hljs-keyword&quot;&lt;/span&gt;&gt;&lt;/span&gt;Next&lt;span class=&quot;hljs-tag&quot;&gt;&lt;/&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-tag&quot;&gt;&lt;&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;hljs-keyword&quot;&lt;/span&gt;&gt;&lt;/span&gt;End&lt;span class=&quot;hljs-tag&quot;&gt;&lt;/&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt;&gt;&lt;/span&gt; &lt;span class=&quot;hljs-tag&quot;&gt;&lt;&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;hljs-keyword&quot;&lt;/span&gt;&gt;&lt;/span&gt;Sub&lt;span class=&quot;hljs-tag&quot;&gt;&lt;/&lt;span class=&quot;hljs-title&quot;&gt;span&lt;/span&gt;&gt;&lt;/span&gt;
+</code></pre>
+
+<p><a href="http://club.excelhome.net/thread-1072929-1-1.html" title="[求助] 急求！如何批量复制并重命名工作表！">引用来源：ExcelHome 帖子“[求助] 急求！如何批量复制并重命名工作表！”</a></p>
+
+<p><img src="/images/loader.gif" data-src="/images/excel_macros_1.png" alt="img" title="创建宏" /></p>
+
+<p><img src="/images/loader.gif" data-src="/images/excel_macros_1.png" alt="img" title="编辑宏" /></p>
+
+<p><img src="/images/loader.gif" data-src="/images/excel_macros_1.png" alt="img" title="运行结果" /></p>
+</article>
+                <section class="author">
+                    <div class="avatar" style="background-image: url(/images/avatar.jpg);"></div>
+                    <a class="name" href="/resume.html">徐费费</a>
+                    <div class="intro">学会谦卑</div>
+                </section>
+                <section class="recommend">
+                    
+                    
+                    <section class="nav next">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/post/2015/11/05/day1%e6%9d%82%e8%ae%b0.html">Day 1 乱写一通</a>
+                    </section>
+                    
+                </section>
+                <section id="disqus_thread"></section>
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        徐费费 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.inkpaper.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/js/jquery-1.11.2.min.js"></script>
+        <script src="/js/highlight.pack.js"></script>
+        <script src="/js/jquery.unveil.js"></script>
+        <script src="/js/index.js"></script>
+        <script type="text/javascript">
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//xfhrv.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+    </body>
+</html>
