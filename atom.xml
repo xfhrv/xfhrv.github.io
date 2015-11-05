@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>徐费费</title>
   <id>http://xfhrv.cn/</id>
-  <updated>2015-11-05T21:51:35+08:00</updated>
+  <updated>2015-11-05T22:56:51+08:00</updated>
   <subtitle>一个没有灵魂的躯壳</subtitle>
   <link href="http://xfhrv.cn/"></link>
   <author>
@@ -9,7 +9,7 @@
   </author>
   <entry>
     <title>Day 2 折腾吧，Git！</title>
-    <updated>2015-11-05T21:48:00+08:00</updated>
+    <updated>2015-11-05T22:56:00+08:00</updated>
     <id>tag:,2015-11-05:/xfhrv.cn/post/2015/11/05/test_git.html</id>
     <content type="html">&#xA;配置Terminal中的Git&#xA;===&#xA;这文章就是为了测试&#xA;---&#xA;折腾了这么久的命令行Git，现在始终得测试一下是否可用。</content>
     <link href="http:/xfhrv.cn/post/2015/11/05/test_git.html"></link>
