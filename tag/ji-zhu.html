@@ -1,241 +1,225 @@
-<!doctype html>
-<html lang="en-US">
-
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>徐费费 - </title>
-    <meta name="description" content="" />
-    <meta name="Author" content="Ken M. Lai(networktsukkomime.me)" />
+        <meta charset="utf-8" />
+        <title>徐费费 - 技术</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
 
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="http://stepofweb.gweb.io/.templates/IsisOne/HTML/assets/plugins/lt-ie9/html5.js"></script>
-    <script type="text/javascript" src="http://stepofweb.gweb.io/.templates/IsisOne/HTML/assets/plugins/lt-ie9/respond.min.js"></script>
-    <script type="text/javascript" src="http://stepofweb.gweb.io/.templates/IsisOne/HTML/assets/plugins/lt-ie9/excanvas.compiled.js"></script>
-    <![endif]-->
-
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Dosis:300,400" rel="stylesheet" type="text/css" />
-
-
-    <!-- CORE CSS FRAMEWORK -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-    <!-- CSS TEMPLATE -->
-    <link href="http://xfhrv.cn/theme/css/reset.css" rel="stylesheet" type="text/css" />
-    <link href="http://xfhrv.cn/theme/css/framework.css" rel="stylesheet" type="text/css" />
-    <link href="http://xfhrv.cn/theme/css/typography.css" rel="stylesheet" type="text/css" />
-    <link href="http://xfhrv.cn/theme/css/layout.css" rel="stylesheet" type="text/css" />
-
-    <link href="http://xfhrv.cn/theme/css/blog.css" rel="stylesheet" type="text/css" />
-
-    <!-- ICONS -->
-
-    <!-- mobile settings -->
-    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
-
-    <!-- Morenizr -->
-    <script type="text/javascript" src="http://xfhrv.cn/theme/js/modernizr.min.js"></script>
-
-    <!-- google authorship -->
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 </head>
-<body>
 
-<!-- Main Nav -->
-<header id="header" style="margin-top:0">
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">徐费费  <strong>BIM</strong></a></h1>
+                <nav><ul>
+                    <li><a href="/pages/简历.html">个人简历</a></li>
+                    <li><a href="/category/ji-zhu.html">技术</a></li>
+                    <li><a href="/category/za-wen.html">杂文</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
 
-  <nav class="navbar navbar-inverse" role="navigation">
-    <div class="container">
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/2015/zhe-teng-git.html">折腾Git！</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-11-05T21:48:00+08:00">
+                Published: 周四 05 十一月 2015
+        </abbr>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobileMenu" class="fa fa-bars" type="button" data-toggle="collapse" data-target=".navbar-collapse"></button>
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/xu-fei-fei-eric.html">徐费费Eric</a>
+        </address>
+<p>In <a href="/category/ji-zhu.html">技术</a>.</p>
+<p>tags: <a href="/tag/ji-zhu.html">技术</a> <a href="/tag/excel.html">Excel</a> </p>
+</footer><!-- /.post-info --><h1>配置Terminal中的Git</h1>
+<h2>这文章就是为了测试</h2>
+<p>折腾了这么久的命令行Git，现在始终得测试一下是否可用。<!--more--></p>
+<h2>我成功啦！</h2>
+<p>终于学会了怎么去配置本地的Git仓库，怎样去download远程仓库的内容到本地制定目录。可能各位大神不觉得我这有什么问题，可之前我是这样操作的：</p>
+<div class="highlight"><pre><span></span>#找到一个Git地址
+#例如 https://github.com/xfhrv/xfhrv.github.io.git
+#然后随便找个目录，例如 $HOME 目录下
 
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <a class="navbar-brand scrollTo" href="#home">
-          <img src="" alt="" width="50" height="50" />
-          <span class="hidden-xs">徐费费</span>
-        </a>
-      </div>
+$ cd ~
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+#然后直接git clone出来
+~$ git clone https://github.com/xfhrv/xfhrv.github.io.git
 
-        <!-- Fullscreen Button - Unavailable for IE -->
-        <a href="#" class="btn-fullscreen"><i class="fa fa-external-link"></i></a>
+#本地就会多一个名为 xfhrv.github.io 的文件夹，里面装的文件
+~$ ls
+xfhrv.github.io
+</pre></div>
 
-        <ul class="nav navbar-nav navbar-right">
-          <!-- If the user wants to make articles the home page then remove blog link, and make about and work links point to old home page. -->
-            <li><a href="http://xfhrv.cn/index.html#home">Home</a></li>
-            <li><a href="http://xfhrv.cn/index.html#about">About</a></li>
-            <li><a href="http://xfhrv.cn/blog.html">Blog</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links <b class="caret"></b></a>
-              <ul class="dropdown-menu" style="background-color:#000">
-                <li style="background-color:#000"><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
-                <li style="background-color:#000"><a href="http://python.org/" target="_blank">Python.org</a></li>
-              </ul>
-            </li>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
 
-    </div>
-  </nav>
-</header>
-<!-- /Main Nav -->  <section id="blog">
-    <article class="container">
+<p>可是我用的纸小墨InkPaper是把最新的文件生成到一个名为<code>Public</code>的文件夹里，关键是网站程序自带的<code>./ink publish</code>发布功能我没法用！因为我不会！Handle Book里边也没讲！<strong>今晚我就是在折腾这些东西！</strong></p>
+<h2>How to do</h2>
+<p>既然我已经折腾出来了方法，那我还是针对小白写一个Step by step吧。</p>
+<p>这里我假设大家跟我一样，Github里已经有远程仓库了，而且原创仓库里有内容了，只是需要把文件弄到本地来修改，经过简单的配置就可以轻松使用<code>git push</code>内容到远程仓库。</p>
+<h4>Step 1 （建立）进入文件夹</h4>
+<div class="highlight"><pre><span></span>#如果没有文件夹，先建立，如果已经有了，直接进入
 
-      <div class="row">
-        <div id="blog_main_area" class="left col-md-9">
-  <div class="item">
-      <div class="item-title">
-        <h2>技术</h2>
-      </div>
-          <p><a href="http://xfhrv.cn/2015/zhe-teng-git.html"><span class="label label-default light">周四 05 十一月 2015</span> 折腾Git！</a></p>
-          <p><a href="http://xfhrv.cn/2015/hao-yong-de-excelhong.html"><span class="label label-default light">周四 05 十一月 2015</span> 好用的Excel宏</a></p>
-  </div>
-        </div>
+$ mkdir test
+$ cd test
+test$
+</pre></div>
 
-        <!-- SIDEBAR -->
-        <div class="right col-md-3">
-          <!-- recent work -->
-          <!-- <div class="widget">
 
-                      <h3>Recent Work</h3>
+<h4>Step 2 初始化</h4>
+<div class="highlight"><pre><span></span>test$ git init
+Initialized empty Git repository in /test/.git/
+test$
+</pre></div>
 
-                      <a class="popup-image thumb" href="assets/images/preview/slider/1.jpg">
-                          <img src="http://xfhrv.cn/theme/img/1x1.png" class="img-responsive" data-src="holder.js/85x85/#888:#555555/auto/" alt="img" />
-                      </a>
-                      <a class="popup-video thumb" href="http://www.youtube.com/watch?v=kh29_SERH0Y?rel=0">
-                          <img src="http://xfhrv.cn/theme/img/1x1.png" class="ajax-project img-responsive" data-src="holder.js/85x85/#676767:#555555/auto/" alt="img" />
-                      </a>
-                      <a class="popup-video thumb" href="http://vimeo.com/23630702">
-                          <img src="http://xfhrv.cn/theme/img/1x1.png" class="ajax-project img-responsive" data-src="holder.js/85x85/#888:#555555/auto/" alt="img" />
-                      </a>
 
-                      <a class="external ajax-project thumb" href="project-external-1.html">
-                          <img src="http://xfhrv.cn/theme/img/1x1.png" class="ajax-project img-responsive" data-src="holder.js/85x85/#676767:#555555/auto/" alt="img" />
-                      </a>
-                      <a class="external ajax-project thumb" href="project-external-2.html">
-                          <img src="http://xfhrv.cn/theme/img/1x1.png" class="ajax-project img-responsive" data-src="holder.js/85x85/#888:#555555/auto/" alt="img" />
-                      </a>
-                      <a class="external ajax-project thumb" href="project-external-3.html">
-                          <img src="http://xfhrv.cn/theme/img/1x1.png" class="ajax-project img-responsive" data-src="holder.js/85x85/#676767:#555555/auto/" alt="img" />
-                      </a>
+<h4>Step 3 仓库别名</h4>
+<div class="highlight"><pre><span></span>#这一步我的理解就是给冗长的Git远程仓库地址设置一个本地好用的别名
+#一般都是设置为 origin ，你也可以改成别的
 
-                      <div class="clearfix"></div>
-                  </div> -->
+test$ git remote add origin git@github.com:username/project.git
+test$
+</pre></div>
 
-          <!-- categories -->
-          <div class="widget">
 
-            <h3>Categories</h3>
+<h4>Step 4 把远程仓库的内容“拉”回来</h4>
+<div class="highlight"><pre><span></span><span class="cp">#这句话的意思就是把git远程的origin仓库里的master分支的内容给我拉回来</span>
+<span class="n">test</span><span class="err">$</span> <span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span>
 
-            <ul>
-               <li><a class="theme_link" href="http://xfhrv.cn/category/ji-zhu.html"><i class="fa fa-dot-circle-o"></i> 技术</a>
-              </li>
-              <li><a class="theme_link" href="http://xfhrv.cn/category/za-wen.html"><i class="fa fa-dot-circle-o"></i> 杂文</a>
-              </li>
-            </ul>
+<span class="cp">#然后git分分钟开始当搬运工</span>
+<span class="nl">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="n">done</span><span class="p">.</span>
+<span class="nl">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="p">.</span>
+<span class="nl">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">99</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">90</span>
+<span class="n">Receiving</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mf">2.34</span> <span class="n">MiB</span> <span class="o">|</span> <span class="mf">52.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="p">.</span>
+<span class="n">Resolving</span> <span class="nl">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">106</span><span class="o">/</span><span class="mi">106</span><span class="p">),</span> <span class="n">done</span><span class="p">.</span>
+<span class="n">From</span> <span class="n">github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">username</span><span class="o">/</span><span class="n">project</span>
+ <span class="o">*</span> <span class="n">branch</span>            <span class="n">master</span>     <span class="o">-&gt;</span> <span class="n">FETCH_HEAD</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">master</span>     <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">master</span>
 
-          </div>
+<span class="cp">#运回来3个文件 </span>
+<span class="n">test</span><span class="err">$</span> <span class="n">ls</span>
+<span class="n">CNAME</span>   <span class="n">index</span><span class="p">.</span><span class="n">html</span>  <span class="n">resume</span><span class="p">.</span><span class="n">html</span>
+</pre></div>
 
-          <!-- Archives -->
-          <div class="widget">
 
-            <h3>Archives</h3>
+<h4>东西都运回来了，现在这个test文件夹就是你的本地仓库了，如果修改了仓库里的文件，要运走怎么办？</h4>
+<h2>更简单好吗！</h2>
+<h4>Step 1 让git去查修改的东西有哪些</h4>
+<div class="highlight"><pre><span></span>#简单，就一条命令
+test$ git add .
+test$
+#没有任何提示，git默默在后台把事儿给做了
 
-            <!-- Get all of the articles with their dates -->
-            <div class="hidden">
-                None
-                None
-            </div>
+#如果你想查看明细
+test$ git status
 
-            <!-- If the user indicates they prefer a list.-->                <ul class="tree">
-                    <li>
-                        <span><i class="fa fa-minus-square-o"></i>2015</span>
+On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+deleted:    test
+
+test$
+#这里看见删除了一个名叫test的文件
+</pre></div>
+
+
+<h4>Step 2 Commit提交并说明</h4>
+<div class="highlight"><pre><span></span><span class="cp">#你修改过东西，是不是得自己确认一次？是不是得备注修改过什么？</span>
+<span class="cp">#那就 commit 提交</span>
+
+<span class="n">test</span><span class="err">$</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;这里就写注释的内容&quot;</span>
+<span class="p">[</span><span class="n">master</span> <span class="n">e481e2d</span><span class="p">]</span> <span class="k">for</span> <span class="n">test</span>
+<span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">deletion</span><span class="p">(</span><span class="o">-</span><span class="p">)</span>
+<span class="n">delete</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">test</span>
+<span class="n">test</span><span class="err">$</span> 
+<span class="err">＃</span><span class="n">git会提示一些基础信息</span>
+</pre></div>
+
+
+<h4>Step 3 最后把东西“推”上去</h4>
+<div class="highlight"><pre><span></span>#这个也简单
+#让git把“货”推到别名origin仓库的master分支去
+test$ git push origin master
+
+#然后会显示一些传输的过程信息
+Counting objects: 1, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 213 bytes | 0 bytes/s, done.
+Total 1 (delta 1), reused 0 (delta 0)
+To git@github.com:username/project.git
+    caae58f..e481e2d  master -&gt; master
+test$
+</pre></div>
+
+
+<h2>以上的内容简单吧！</h2>
+<p>内容是简单，可是还是耽搁了我大好晚上的不少时间，本着每天学习一点点的心态，抱着颗石头也得嚼碎咽下去的信念，继续努力吧，少年！</p>
+<p>在这里，我必须得感谢前辈们，没有你们的教程，我也没法那么快弄明白。</p>
+<h3>参考资料</h3>
+<ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="Git教程">Git教程－廖雪峰的官方网站</a></li>
+<li><a href="http://www.bootcss.com/p/git-guide/">Git使用简易指南－Bootstrap中文网</a></li>
+<li>"Git Manual"</li>
+</ul>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/2015/hao-yong-de-excelhong.html" rel="bookmark"
+                           title="Permalink to 好用的Excel宏">好用的Excel宏</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-11-05T11:16:00+08:00">
+                Published: 周四 05 十一月 2015
+        </abbr>
+		<br />
+        <abbr class="modified" title="2015-11-05T16:19:00+08:00">
+                Updated: 周四 05 十一月 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/xu-fei-fei-eric.html">徐费费Eric</a>
+        </address>
+<p>In <a href="/category/ji-zhu.html">技术</a>.</p>
+<p>tags: <a href="/tag/ji-zhu.html">技术</a> <a href="/tag/excel.html">Excel</a> </p>
+</footer><!-- /.post-info -->                
+                <a class="readmore" href="/2015/hao-yong-de-excelhong.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
                         <ul>
-                            <li>
-                                <span><i class="fa fa-plus-square-o"></i>2015-11</span>
-                                <ul>
-                                        <li style="display: none;">
-                                            <a class="theme_link" href="http://xfhrv.cn/2015/zhe-teng-git.html">
-                                            <small>周四 05 十一月 2015</small>折腾Git！</a>
-                                        </li>
-                                        <li style="display: none;">
-                                            <a class="theme_link" href="http://xfhrv.cn/2015/hao-yong-de-excelhong.html">
-                                            <small>周四 05 十一月 2015</small>好用的Excel宏</a>
-                                        </li>
-                                </ul>
-                            </li>
-                        </ul></li>
-                </ul></div>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
 
-        </div>
-        <!-- /SIDEBAR -->
+                            <li><a href="#">MAIL ME: XFHRV # QQ.COM</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
 
-      </div>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
 
-    </article>
-  </section>
-  <!-- /BLOG -->
-
-<!-- FOOTER -->
-<footer>
-
-  <!-- SCROOL TO TOP -->
-  <a href="#toTop" class="fa fa-arrow-up toTop"></a>
-
-  <div class="container">
-
-    <div class="row">
-
-        <div class="col-md-6 copyright">
-            徐费费
-            <br />2015 &copy; All Rights Reserved.
-        </div>
-
-        <div class="col-md-6 text-right">
-              <a href="#" class="social fa fa-mail me: xfhrv # qq.com" target="_blank"></a>
-        </div>
-
-    </div>
-
-  </div>
-</footer>
-<!-- /FOOTER -->
-
-
-
-<!-- CORE FILES -->
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/jquery.isotope.js"></script>
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/masonry.js"></script>
-
-<!-- PLUGINS -->
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/jquery.fitvids.min.js"></script>
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/jquery.appear.js"></script>
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/jquery.superslides.min.js"></script>
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/jquery.carouFredSel-6.2.1-packed.js"></script>
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/jquery.countTo.js"></script>
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/jquery.magnific-popup.min.js"></script>
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/holder.js"></script>
-<!-- delete on production -->
-
-<!-- js scripts -->
-<script async type="text/javascript" src="http://xfhrv.cn/theme/js/scripts.js"></script>
-
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/ImageAutoResize.js"></script>
-<script type="text/javascript" src="http://xfhrv.cn/theme/js/application.js"></script>
-
-
-
-
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
 
 </body>
-
 </html>
