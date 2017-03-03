@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xfhrv.cn - 杂文</title><link href="/" rel="alternate"></link><link href="/feeds/za-wen.atom.xml" rel="self"></link><id>/</id><updated>2017-03-03T17:15:00+08:00</updated><entry><title>又是一个新博客</title><link href="/2017/03/you-shi-yi-ge-xin-bo-ke/" rel="alternate"></link><published>2017-03-03T17:15:00+08:00</published><updated>2017-03-03T17:15:00+08:00</updated><author><name>徐费费Eric</name></author><id>tag:None,2017-03-03:/2017/03/you-shi-yi-ge-xin-bo-ke/</id><summary type="html"></summary><content type="html">&lt;p&gt;买了个新笔记本，WIN10，装了PYTHON。就重新用Pelican搞了一个静态博客，把之前InkPaper纸小墨的内容移植过来。&lt;/p&gt;
+&lt;p&gt;这个博客以后主要发布一些工作相关的技术文章，大概就是些关于BIM的内容吧。&lt;/p&gt;
+&lt;p&gt;毕竟域名的租金不能白交 : P &lt;/p&gt;
+&lt;p&gt;内容呢，暂时寄存在Github上，国内空间备案什么的麻烦死了。&lt;/p&gt;</content><category term="杂文"></category></entry></feed>

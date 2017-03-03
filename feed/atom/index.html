@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xfhrv.cn</title><link href="/" rel="alternate"></link><link href="/feed/atom/index.html" rel="self"></link><id>/</id><updated>2017-03-03T17:15:00+08:00</updated><entry><title>又是一个新博客</title><link href="/2017/03/you-shi-yi-ge-xin-bo-ke/" rel="alternate"></link><published>2017-03-03T17:15:00+08:00</published><updated>2017-03-03T17:15:00+08:00</updated><author><name>徐费费Eric</name></author><id>tag:None,2017-03-03:/2017/03/you-shi-yi-ge-xin-bo-ke/</id><summary type="html"></summary><content type="html">&lt;p&gt;买了个新笔记本，WIN10，装了PYTHON。就重新用Pelican搞了一个静态博客，把之前InkPaper纸小墨的内容移植过来。&lt;/p&gt;
+&lt;p&gt;这个博客以后主要发布一些工作相关的技术文章，大概就是些关于BIM的内容吧。&lt;/p&gt;
+&lt;p&gt;毕竟域名的租金不能白交 : P &lt;/p&gt;
+&lt;p&gt;内容呢，暂时寄存在Github上，国内空间备案什么的麻烦死了。&lt;/p&gt;</content><category term="杂文"></category></entry><entry><title>折腾Git！</title><link href="/2015/11/zhe-teng-git/" rel="alternate"></link><published>2015-11-05T21:48:00+08:00</published><updated>2015-11-05T21:48:00+08:00</updated><author><name>徐费费Eric</name></author><id>tag:None,2015-11-05:/2015/11/zhe-teng-git/</id><summary type="html"></summary><content type="html">&lt;h1&gt;配置Terminal中的Git&lt;/h1&gt;
+&lt;h2&gt;这文章就是为了测试&lt;/h2&gt;
+&lt;p&gt;折腾了这么久的命令行Git，现在始终得测试一下是否可用。&lt;!--more--&gt;&lt;/p&gt;
+&lt;h2&gt;我成功啦！&lt;/h2&gt;
+&lt;p&gt;终于学会了怎么去配置本地的Git仓库，怎样去download远程仓库的内容到本地制定目录。可能各位大神不觉得我这有什么问题，可之前我是这样操作的：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#找到一个Git地址
+#例如 https://github.com/xfhrv/xfhrv.github.io.git
+#然后随便找个目录，例如 $HOME 目录下
+
+$ cd ~
+
+#然后直接git clone出来
+~$ git clone https://github.com/xfhrv/xfhrv.github.io.git
+
+#本地就会多一个名为 xfhrv.github.io 的文件夹，里面装的文件
+~$ ls
+xfhrv.github.io
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;可是我用的纸小墨InkPaper是把最新的文件生成到一个名为&lt;code&gt;Public&lt;/code&gt;的文件夹里，关键是网站程序自带的&lt;code&gt;./ink publish&lt;/code&gt;发布功能我没法用！因为我不会！Handle Book里边也没讲！&lt;strong&gt;今晚我就是在折腾这些东西！&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;How to do&lt;/h2&gt;
+&lt;p&gt;既然我已经折腾出来了方法，那我还是针对小白写一个Step by step吧。&lt;/p&gt;
+&lt;p&gt;这里我假设大家跟我一样，Github里已经有远程仓库了，而且原创仓库里有内容了，只是需要把文件弄到本地来修改，经过简单的配置就可以轻松使用&lt;code&gt;git push&lt;/code&gt;内容到远程仓库。&lt;/p&gt;
+&lt;h4&gt;Step 1 （建立）进入文件夹&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#如果没有文件夹，先建立，如果已经有了，直接进入
+
+$ mkdir test
+$ cd test
+test$
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Step 2 初始化&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;test$ git init
+Initialized empty Git repository in /test/.git/
+test$
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Step 3 仓库别名&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#这一步我的理解就是给冗长的Git远程仓库地址设置一个本地好用的别名
+#一般都是设置为 origin ，你也可以改成别的
+
+test$ git remote add origin git@github.com:username/project.git
+test$
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Step 4 把远程仓库的内容“拉”回来&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#这句话的意思就是把git远程的origin仓库里的master分支的内容给我拉回来&lt;/span&gt;
+&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;pull&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+
+&lt;span class="cp"&gt;#然后git分分钟开始当搬运工&lt;/span&gt;
+&lt;span class="nl"&gt;remote&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Counting&lt;/span&gt; &lt;span class="nl"&gt;objects&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="nl"&gt;remote&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Compressing&lt;/span&gt; &lt;span class="nl"&gt;objects&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="nl"&gt;remote&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Total&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delta&lt;/span&gt; &lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;reused&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delta&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;pack&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;reused&lt;/span&gt; &lt;span class="mi"&gt;90&lt;/span&gt;
+&lt;span class="n"&gt;Receiving&lt;/span&gt; &lt;span class="nl"&gt;objects&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mf"&gt;2.34&lt;/span&gt; &lt;span class="n"&gt;MiB&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mf"&gt;52.00&lt;/span&gt; &lt;span class="n"&gt;KiB&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Resolving&lt;/span&gt; &lt;span class="nl"&gt;deltas&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;106&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;106&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;From&lt;/span&gt; &lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;com&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;project&lt;/span&gt;
+ &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;branch&lt;/span&gt;            &lt;span class="n"&gt;master&lt;/span&gt;     &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;FETCH_HEAD&lt;/span&gt;
+ &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;branch&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;      &lt;span class="n"&gt;master&lt;/span&gt;     &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;master&lt;/span&gt;
+
+&lt;span class="cp"&gt;#运回来3个文件 &lt;/span&gt;
+&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;ls&lt;/span&gt;
+&lt;span class="n"&gt;CNAME&lt;/span&gt;   &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;  &lt;span class="n"&gt;resume&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;东西都运回来了，现在这个test文件夹就是你的本地仓库了，如果修改了仓库里的文件，要运走怎么办？&lt;/h4&gt;
+&lt;h2&gt;更简单好吗！&lt;/h2&gt;
+&lt;h4&gt;Step 1 让git去查修改的东西有哪些&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#简单，就一条命令
+test$ git add .
+test$
+#没有任何提示，git默默在后台把事儿给做了
+
+#如果你想查看明细
+test$ git status
+
+On branch master
+Changes to be committed:
+  (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage)
+
+deleted:    test
+
+test$
+#这里看见删除了一个名叫test的文件
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Step 2 Commit提交并说明&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#你修改过东西，是不是得自己确认一次？是不是得备注修改过什么？&lt;/span&gt;
+&lt;span class="cp"&gt;#那就 commit 提交&lt;/span&gt;
+
+&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;这里就写注释的内容&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;master&lt;/span&gt; &lt;span class="n"&gt;e481e2d&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;changed&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;deletion&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;delete&lt;/span&gt; &lt;span class="n"&gt;mode&lt;/span&gt; &lt;span class="mi"&gt;100644&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;
+&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; 
+&lt;span class="err"&gt;＃&lt;/span&gt;&lt;span class="n"&gt;git会提示一些基础信息&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Step 3 最后把东西“推”上去&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#这个也简单
+#让git把“货”推到别名origin仓库的master分支去
+test$ git push origin master
+
+#然后会显示一些传输的过程信息
+Counting objects: 1, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 213 bytes | 0 bytes/s, done.
+Total 1 (delta 1), reused 0 (delta 0)
+To git@github.com:username/project.git
+    caae58f..e481e2d  master -&amp;gt; master
+test$
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;以上的内容简单吧！&lt;/h2&gt;
+&lt;p&gt;内容是简单，可是还是耽搁了我大好晚上的不少时间，本着每天学习一点点的心态，抱着颗石头也得嚼碎咽下去的信念，继续努力吧，少年！&lt;/p&gt;
+&lt;p&gt;在这里，我必须得感谢前辈们，没有你们的教程，我也没法那么快弄明白。&lt;/p&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="Git教程"&gt;Git教程－廖雪峰的官方网站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.bootcss.com/p/git-guide/"&gt;Git使用简易指南－Bootstrap中文网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;"Git Manual"&lt;/li&gt;
+&lt;/ul&gt;</content><category term="技术"></category><category term="Excel"></category></entry><entry><title>好用的Excel宏</title><link href="/2015/11/hao-yong-de-excelhong/" rel="alternate"></link><published>2015-11-05T11:16:00+08:00</published><updated>2015-11-05T16:19:00+08:00</updated><author><name>徐费费Eric</name></author><id>tag:None,2015-11-05:/2015/11/hao-yong-de-excelhong/</id><summary type="html"></summary><content type="html">&lt;p&gt;Excel的Macros真心强大！&lt;/p&gt;
+&lt;p&gt;刚刚工作的时候想批量复制Sheets，依次按数字序列1,2,3,……,N命名排序，顺手百度上一搜就出来了以下代码&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Sub test()
+    For i = 2 To 12
+    ActiveSheet.Copy After:=ActiveSheet
+    ActiveSheet.Name = i
+    Next
+End Sub
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://club.excelhome.net/thread-1072929-1-1.html" title="[求助] 急求！如何批量复制并重命名工作表！"&gt;引用来源：ExcelHome 帖子“[求助] 急求！如何批量复制并重命名工作表！”&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="创建宏" src="/images/excel_macros_1.png" title="创建宏"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="编辑宏" src="/images/excel_macros_2.png" title="编辑宏"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="运行结果" src="/images/excel_macros_3.png" title="运行结果"&gt;&lt;/p&gt;</content><category term="技术"></category><category term="Excel"></category></entry></feed>
