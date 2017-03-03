@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet/less" type="text/css" href="http://localhost:8000/theme/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/font-awesome.min.css">
+
+    <link href="http://localhost:8000/static/custom.css" rel="stylesheet">
+
+    <link href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="徐费皓苒 xfhrv.cn Atom">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="徐费皓苒" />
+<meta name="description" content="" />
+<meta name="keywords" content="技术, Excel">
+<meta property="og:site_name" content="徐费皓苒 xfhrv.cn"/>
+<meta property="og:title" content="折腾Git！"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://localhost:8000/zhe-teng-git.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-11-05 21:48:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/xu-fei-hao-ran.html">
+<meta property="article:section" content="技术"/>
+<meta property="article:tag" content="技术"/>
+<meta property="article:tag" content="Excel"/>
+<meta property="og:image" content="/images/head.jpg">
+
+  <title>徐费皓苒 xfhrv.cn &ndash; 折腾Git！</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://localhost:8000">
+        <img src="/images/head.jpg" alt="徐费皓苒" title="徐费皓苒">
+      </a>
+      <h1><a href="http://localhost:8000">徐费皓苒</a></h1>
+
+<p>Focus on BIM</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://localhost:8000/pages/about-me.html#about-me">ABOUT ME</a></li>
+
+          <li><a href="mailto:xfhrv@qq.com" target="_blank">EMAIL</a></li>
+          <li><a href="http://xfhrv.cn" target="_blank">Blog</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-rss" href="//xfhrv.cn/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://localhost:8000">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://localhost:8000/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="zhe-teng-git">折腾Git！</h1>
+    <p>
+          Posted on 周四 05 十一月 2015 in <a href="http://localhost:8000/category/ji-zhu.html">技术</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1>配置Terminal中的Git</h1>
+<h2>这文章就是为了测试</h2>
+<p>折腾了这么久的命令行Git，现在始终得测试一下是否可用。<!--more--></p>
+<h2>我成功啦！</h2>
+<p>终于学会了怎么去配置本地的Git仓库，怎样去download远程仓库的内容到本地制定目录。可能各位大神不觉得我这有什么问题，可之前我是这样操作的：</p>
+<div class="highlight"><pre><span></span>#找到一个Git地址
+#例如 https://github.com/xfhrv/xfhrv.github.io.git
+#然后随便找个目录，例如 $HOME 目录下
+
+$ cd ~
+
+#然后直接git clone出来
+~$ git clone https://github.com/xfhrv/xfhrv.github.io.git
+
+#本地就会多一个名为 xfhrv.github.io 的文件夹，里面装的文件
+~$ ls
+xfhrv.github.io
+</pre></div>
+
+
+<p>可是我用的纸小墨InkPaper是把最新的文件生成到一个名为<code>Public</code>的文件夹里，关键是网站程序自带的<code>./ink publish</code>发布功能我没法用！因为我不会！Handle Book里边也没讲！<strong>今晚我就是在折腾这些东西！</strong></p>
+<h2>How to do</h2>
+<p>既然我已经折腾出来了方法，那我还是针对小白写一个Step by step吧。</p>
+<p>这里我假设大家跟我一样，Github里已经有远程仓库了，而且原创仓库里有内容了，只是需要把文件弄到本地来修改，经过简单的配置就可以轻松使用<code>git push</code>内容到远程仓库。</p>
+<h4>Step 1 （建立）进入文件夹</h4>
+<div class="highlight"><pre><span></span>#如果没有文件夹，先建立，如果已经有了，直接进入
+
+$ mkdir test
+$ cd test
+test$
+</pre></div>
+
+
+<h4>Step 2 初始化</h4>
+<div class="highlight"><pre><span></span>test$ git init
+Initialized empty Git repository in /test/.git/
+test$
+</pre></div>
+
+
+<h4>Step 3 仓库别名</h4>
+<div class="highlight"><pre><span></span>#这一步我的理解就是给冗长的Git远程仓库地址设置一个本地好用的别名
+#一般都是设置为 origin ，你也可以改成别的
+
+test$ git remote add origin git@github.com:username/project.git
+test$
+</pre></div>
+
+
+<h4>Step 4 把远程仓库的内容“拉”回来</h4>
+<div class="highlight"><pre><span></span><span class="cp">#这句话的意思就是把git远程的origin仓库里的master分支的内容给我拉回来</span>
+<span class="n">test</span><span class="err">$</span> <span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span>
+
+<span class="cp">#然后git分分钟开始当搬运工</span>
+<span class="nl">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="n">done</span><span class="p">.</span>
+<span class="nl">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="p">.</span>
+<span class="nl">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">99</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">90</span>
+<span class="n">Receiving</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mf">2.34</span> <span class="n">MiB</span> <span class="o">|</span> <span class="mf">52.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="p">.</span>
+<span class="n">Resolving</span> <span class="nl">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">106</span><span class="o">/</span><span class="mi">106</span><span class="p">),</span> <span class="n">done</span><span class="p">.</span>
+<span class="n">From</span> <span class="n">github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">username</span><span class="o">/</span><span class="n">project</span>
+ <span class="o">*</span> <span class="n">branch</span>            <span class="n">master</span>     <span class="o">-&gt;</span> <span class="n">FETCH_HEAD</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">master</span>     <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">master</span>
+
+<span class="cp">#运回来3个文件 </span>
+<span class="n">test</span><span class="err">$</span> <span class="n">ls</span>
+<span class="n">CNAME</span>   <span class="n">index</span><span class="p">.</span><span class="n">html</span>  <span class="n">resume</span><span class="p">.</span><span class="n">html</span>
+</pre></div>
+
+
+<h4>东西都运回来了，现在这个test文件夹就是你的本地仓库了，如果修改了仓库里的文件，要运走怎么办？</h4>
+<h2>更简单好吗！</h2>
+<h4>Step 1 让git去查修改的东西有哪些</h4>
+<div class="highlight"><pre><span></span>#简单，就一条命令
+test$ git add .
+test$
+#没有任何提示，git默默在后台把事儿给做了
+
+#如果你想查看明细
+test$ git status
+
+On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+deleted:    test
+
+test$
+#这里看见删除了一个名叫test的文件
+</pre></div>
+
+
+<h4>Step 2 Commit提交并说明</h4>
+<div class="highlight"><pre><span></span><span class="cp">#你修改过东西，是不是得自己确认一次？是不是得备注修改过什么？</span>
+<span class="cp">#那就 commit 提交</span>
+
+<span class="n">test</span><span class="err">$</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;这里就写注释的内容&quot;</span>
+<span class="p">[</span><span class="n">master</span> <span class="n">e481e2d</span><span class="p">]</span> <span class="k">for</span> <span class="n">test</span>
+<span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">deletion</span><span class="p">(</span><span class="o">-</span><span class="p">)</span>
+<span class="n">delete</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">test</span>
+<span class="n">test</span><span class="err">$</span> 
+<span class="err">＃</span><span class="n">git会提示一些基础信息</span>
+</pre></div>
+
+
+<h4>Step 3 最后把东西“推”上去</h4>
+<div class="highlight"><pre><span></span>#这个也简单
+#让git把“货”推到别名origin仓库的master分支去
+test$ git push origin master
+
+#然后会显示一些传输的过程信息
+Counting objects: 1, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 213 bytes | 0 bytes/s, done.
+Total 1 (delta 1), reused 0 (delta 0)
+To git@github.com:username/project.git
+    caae58f..e481e2d  master -&gt; master
+test$
+</pre></div>
+
+
+<h2>以上的内容简单吧！</h2>
+<p>内容是简单，可是还是耽搁了我大好晚上的不少时间，本着每天学习一点点的心态，抱着颗石头也得嚼碎咽下去的信念，继续努力吧，少年！</p>
+<p>在这里，我必须得感谢前辈们，没有你们的教程，我也没法那么快弄明白。</p>
+<h3>参考资料</h3>
+<ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="Git教程">Git教程－廖雪峰的官方网站</a></li>
+<li><a href="http://www.bootcss.com/p/git-guide/">Git使用简易指南－Bootstrap中文网</a></li>
+<li>"Git Manual"</li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://localhost:8000/tag/ji-zhu.html">技术</a>
+      <a href="http://localhost:8000/tag/excel.html">Excel</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; 徐费皓苒 2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " 徐费皓苒 xfhrv.cn ",
+  "url" : "http://localhost:8000",
+  "image": "/images/head.jpg",
+  "description": "徐费皓苒\的博客"
+}
+</script>
+</body>
+</html>
