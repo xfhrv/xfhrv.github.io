@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>徐费皓苒 xfhrv.cn</title><link href="http://xfhrv.cn/" rel="alternate"></link><link href="http://xfhrv.cn/feeds/all.atom.xml" rel="self"></link><id>http://xfhrv.cn/</id><updated>2017-03-06T03:54:00+08:00</updated><entry><title>开启新天地——AutoHotkey</title><link href="http://xfhrv.cn/kai-qi-xin-tian-di-autohotkey.html" rel="alternate"></link><published>2017-03-06T03:54:00+08:00</published><updated>2017-03-06T03:54:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-06:/kai-qi-xin-tian-di-autohotkey.html</id><summary type="html"></summary><content type="html">&lt;p&gt;静态博客搭建不容易，使用起来不容易，坚持使用更不容易。
+<feed xmlns="http://www.w3.org/2005/Atom"><title>徐费皓苒 xfhrv.cn</title><link href="http://xfhrv.cn/" rel="alternate"></link><link href="http://xfhrv.cn/feeds/all.atom.xml" rel="self"></link><id>http://xfhrv.cn/</id><updated>2017-03-06T03:54:00+08:00</updated><entry><title>静态博客图片解决方案——AutoHotkey</title><link href="http://xfhrv.cn/jing-tai-bo-ke-tu-pian-jie-jue-fang-an-autohotkey.html" rel="alternate"></link><published>2017-03-06T03:54:00+08:00</published><updated>2017-03-06T03:54:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-06:/jing-tai-bo-ke-tu-pian-jie-jue-fang-an-autohotkey.html</id><summary type="html">&lt;p&gt;你是静态博主吗？有没有为文章添加图片而烦恼呢？你该看看这篇文章！&lt;/p&gt;</summary><content type="html">&lt;p&gt;静态博客搭建不容易，使用起来不容易，坚持使用更不容易。
 但是，请不要轻易放弃。
 今天我就遇到个特别麻烦的问题：给文章添加图片。
 是的，静态博客管理图片就是那么麻烦。&lt;/p&gt;
 &lt;p&gt;事情是这样的，我今晚的目标本是写一片管理Civil3D地形处理的文章，属于step by step的形式。既然是这样的文章，那光用枯燥的文字很难去描述操作步奏咯，那就添加软件操作的截图。刚准备动手，就发现OMG，用Markdown写博客添加图片好麻烦啊！&lt;/p&gt;
-&lt;p&gt;当时我的内心是这样的：
-&lt;img alt="" src="/images/20170306040231.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;当时我的内心是这样的：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/images/20170306040231.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;然后我就开启了百度模式，在网上疯狂地搜索，看看大神们、前辈们是怎样去解决这个问题的。
 诶？发现一个好东西：&lt;a href="http://zh.mweb.im/"&gt;MWeb&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;刚一点开，我又崩溃了：这么好的东西，只支持Mac平台。
