@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet/less" type="text/css" href="http://xfhrv.cn/theme/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://xfhrv.cn/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://xfhrv.cn/theme/font-awesome/css/font-awesome.min.css">
+
+    <link href="http://xfhrv.cn/static/custom.css" rel="stylesheet">
+
+    <link href="http://xfhrv.cn/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="徐费皓苒 xfhrv.cn Atom">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="徐费皓苒" />
+<meta name="description" content="" />
+<meta name="keywords" content="AutoHotkey">
+<meta property="og:site_name" content="徐费皓苒 xfhrv.cn"/>
+<meta property="og:title" content="开启新天地——AutoHotkey"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://xfhrv.cn/kai-qi-xin-tian-di-autohotkey.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-03-06 03:54:00+08:00"/>
+<meta property="article:modified_time" content="2017-03-06 03:54:00+08:00"/>
+<meta property="article:author" content="http://xfhrv.cn/author/xu-fei-hao-ran.html">
+<meta property="article:section" content="技巧"/>
+<meta property="article:tag" content="AutoHotkey"/>
+<meta property="og:image" content="/images/head.jpg">
+
+  <title>徐费皓苒 xfhrv.cn &ndash; 开启新天地——AutoHotkey</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://xfhrv.cn">
+        <img src="/images/head.jpg" alt="徐费皓苒" title="徐费皓苒">
+      </a>
+      <h1><a href="http://xfhrv.cn">徐费皓苒</a></h1>
+
+<p>Focus on BIM</p><!--百度站内搜索-->
+	<p><script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=3405214655814614710' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script></p>
+<!--百度站内搜索-->
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://xfhrv.cn/pages/about-me.html#about-me">ABOUT ME</a></li>
+
+          <li><a href="mailto:xfhrv@qq.com" target="_blank">Contact Me</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://www.linkedin.com/in/%E8%B4%B9%E7%9A%93%E8%8B%92-%E5%BE%90-04ab5b69/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/xfhrv" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-rss" href="//xfhrv.cn/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://xfhrv.cn">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://xfhrv.cn/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="kai-qi-xin-tian-di-autohotkey">开启新天地——AutoHotkey</h1>
+    <p>
+          Posted on 周一 06 三月 2017 in <a href="http://xfhrv.cn/category/ji-qiao.html">技巧</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>静态博客搭建不容易，使用起来不容易，坚持使用更不容易。
+但是，请不要轻易放弃。
+今天我就遇到个特别麻烦的问题：给文章添加图片。
+是的，静态博客管理图片就是那么麻烦。</p>
+<p>事情是这样的，我今晚的目标本是写一片管理Civil3D地形处理的文章，属于step by step的形式。既然是这样的文章，那光用枯燥的文字很难去描述操作步奏咯，那就添加软件操作的截图。刚准备动手，就发现OMG，用Markdown写博客添加图片好麻烦啊！</p>
+<p>当时我的内心是这样的：
+<img alt="" src="/images/20170306040231.jpg"></p>
+<p>然后我就开启了百度模式，在网上疯狂地搜索，看看大神们、前辈们是怎样去解决这个问题的。
+诶？发现一个好东西：<a href="http://zh.mweb.im/">MWeb</a></p>
+<p>刚一点开，我又崩溃了：这么好的东西，只支持Mac平台。
+对我们Win环境的盆友们太不友善了啊！
+（其实我还是有Mac的，只是懒得再去折腾多平台部署Pelican来写文了）</p>
+<p>ok，那我继续找，思路就往workflow、IFTTT、Automator这个方向去了。</p>
+<p>然后我就发现了一个神器！！</p>
+<h2><strong>AutoHotkey！！</strong></h2>
+<p>参考了网上两篇文章（<a href="http://www.jianshu.com/p/6fb3e2151f90">文章1</a>、<a href="http://blog.csdn.net/liuyukuan/article/details/39693241">文章2</a>），down（<a href="https://autohotkey.com/">AutoHotkey官网</a>）了程序，就开始自己动手研究这东西了。</p>
+<p>经过我的研究，实现了这样的功能：</p>
+<blockquote>
+<p>1、选中一张你想添加到文章里的图片</p>
+<p>2、按下某个类似于Ctrl+C的快捷键（自定义任意组合）</p>
+<p>3、图片自动跑到你博客程序的images文件夹里去了</p>
+<p>3、图片自己给自己设置了一个永远不会重复冲突的名字</p>
+<p>3、图片把自己的路径放进了剪贴板</p>
+<p>4、你在你写的文章里Ctrl+V粘贴即可</p>
+</blockquote>
+<p>是不是很方便！！！</p>
+<p>是不是很方便！！！</p>
+<p>是不是很方便！！！</p>
+<p>为了造福广大人民群众，我把AutoHotkey的脚本代码放上来</p>
+<div class="highlight"><pre><span></span><span class="cm">/*</span>
+
+<span class="cm">作者：徐费皓苒  xfhrv.cn</span>
+
+<span class="cm">说明：此脚本实现了复制选中的图片，自动copy到指定目录，且重命名为当前时间，并将文件名copy到剪贴板备用</span>
+
+<span class="cm">用法：运行脚本，选中需要copy的图片，按下Ctrl+Shift+C即可</span>
+
+<span class="cm">*/</span><span class="w"></span>
+
+
+<span class="err">^</span><span class="o">+</span><span class="nl">c</span><span class="o">:</span><span class="err">:</span><span class="w"></span>
+
+send<span class="o">,</span><span class="w"> </span><span class="err">^</span>c<span class="w"></span>
+
+clipwait<span class="w"></span>
+
+filename<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">%</span>clipboard<span class="o">%</span><span class="w"> </span><span class="err">;</span>copy剪贴板的完整文件路径<span class="err">、名称</span><span class="w"></span>
+
+subpart<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">\</span><span class="w"></span>
+
+StringGetPos<span class="o">,</span><span class="w"> </span>index<span class="o">,</span><span class="w"> </span>filename<span class="o">,</span><span class="w"> </span><span class="o">%</span>subpart<span class="o">%,</span><span class="w"> </span>R<span class="w"></span>
+
+<span class="kr">if</span><span class="w"> </span>index<span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span><span class="w"></span>
+<span class="err">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="nl">name</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">SubStr</span><span class="o">(</span>filename<span class="o">,</span><span class="w"> </span>index<span class="o">+</span><span class="m">2</span><span class="o">)</span><span class="w"></span>
+<span class="w">  </span><span class="nl">path</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">SubStr</span><span class="o">(</span>filename<span class="o">,</span><span class="w"> </span><span class="m">1</span><span class="o">,</span>index<span class="o">+</span><span class="m">1</span><span class="o">)</span><span class="w"></span>
+<span class="w">  </span><span class="nl">ext</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">SubStr</span><span class="o">(</span>filename<span class="o">,</span><span class="w"> </span><span class="o">-</span><span class="m">3</span><span class="o">)</span><span class="w"></span>
+
+<span class="err">}</span><span class="w"></span>
+
+newname<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">%</span>A_Now<span class="o">%%</span>ext<span class="o">%</span><span class="w"></span>
+
+FileCopy<span class="o">,</span><span class="w"> </span><span class="o">%</span>path<span class="o">%%</span>name<span class="o">%,</span><span class="w"> </span><span class="nl">C</span><span class="o">:\</span>Users<span class="o">\</span>xfhrv<span class="o">\</span>Desktop<span class="o">\</span>blog<span class="o">\</span>content<span class="o">\</span>images<span class="o">\%</span>newname<span class="o">%</span><span class="w"></span>
+
+clipboard<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">![]</span><span class="o">(/</span>images<span class="o">/%</span>newname<span class="o">%)</span><span class="w"></span>
+
+<span class="kr">return</span><span class="w"></span>
+</pre></div>
+
+
+<p>时间太晚了，我要睡觉了，明天还得上班 ╯﹏╰</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://xfhrv.cn/tag/autohotkey.html">AutoHotkey</a>
+    </p>
+  </div>
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'xfhrv-cn';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>
+  &copy; 徐费皓苒 2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " 徐费皓苒 xfhrv.cn ",
+  "url" : "http://xfhrv.cn",
+  "image": "/images/head.jpg",
+  "description": "徐费皓苒\的博客"
+}
+</script>
+</body>
+</html>
