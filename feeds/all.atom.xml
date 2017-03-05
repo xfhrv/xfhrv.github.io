@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>徐费皓苒 xfhrv.cn</title><link href="http://xfhrv.cn/" rel="alternate"></link><link href="http://xfhrv.cn/feeds/all.atom.xml" rel="self"></link><id>http://xfhrv.cn/</id><updated>2017-03-04T05:40:00+08:00</updated><entry><title>又是一个新博客</title><link href="http://xfhrv.cn/you-shi-yi-ge-xin-bo-ke.html" rel="alternate"></link><published>2017-03-03T17:15:00+08:00</published><updated>2017-03-04T05:40:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-03:/you-shi-yi-ge-xin-bo-ke.html</id><summary type="html"></summary><content type="html">&lt;p&gt;买了个新笔记本，WIN10，装了PYTHON。就重新用Pelican搞了一个静态博客，把之前InkPaper纸小墨的内容移植过来。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>徐费皓苒 xfhrv.cn</title><link href="http://xfhrv.cn/" rel="alternate"></link><link href="http://xfhrv.cn/feeds/all.atom.xml" rel="self"></link><id>http://xfhrv.cn/</id><updated>2017-03-06T03:54:00+08:00</updated><entry><title>开启新天地——AutoHotkey</title><link href="http://xfhrv.cn/kai-qi-xin-tian-di-autohotkey.html" rel="alternate"></link><published>2017-03-06T03:54:00+08:00</published><updated>2017-03-06T03:54:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-06:/kai-qi-xin-tian-di-autohotkey.html</id><summary type="html"></summary><content type="html">&lt;p&gt;静态博客搭建不容易，使用起来不容易，坚持使用更不容易。
+但是，请不要轻易放弃。
+今天我就遇到个特别麻烦的问题：给文章添加图片。
+是的，静态博客管理图片就是那么麻烦。&lt;/p&gt;
+&lt;p&gt;事情是这样的，我今晚的目标本是写一片管理Civil3D地形处理的文章，属于step by step的形式。既然是这样的文章，那光用枯燥的文字很难去描述操作步奏咯，那就添加软件操作的截图。刚准备动手，就发现OMG，用Markdown写博客添加图片好麻烦啊！&lt;/p&gt;
+&lt;p&gt;当时我的内心是这样的：
+&lt;img alt="" src="/images/20170306040231.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;然后我就开启了百度模式，在网上疯狂地搜索，看看大神们、前辈们是怎样去解决这个问题的。
+诶？发现一个好东西：&lt;a href="http://zh.mweb.im/"&gt;MWeb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;刚一点开，我又崩溃了：这么好的东西，只支持Mac平台。
+对我们Win环境的盆友们太不友善了啊！
+（其实我还是有Mac的，只是懒得再去折腾多平台部署Pelican来写文了）&lt;/p&gt;
+&lt;p&gt;ok，那我继续找，思路就往workflow、IFTTT、Automator这个方向去了。&lt;/p&gt;
+&lt;p&gt;然后我就发现了一个神器！！&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;AutoHotkey！！&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;参考了网上两篇文章（&lt;a href="http://www.jianshu.com/p/6fb3e2151f90"&gt;文章1&lt;/a&gt;、&lt;a href="http://blog.csdn.net/liuyukuan/article/details/39693241"&gt;文章2&lt;/a&gt;），down（&lt;a href="https://autohotkey.com/"&gt;AutoHotkey官网&lt;/a&gt;）了程序，就开始自己动手研究这东西了。&lt;/p&gt;
+&lt;p&gt;经过我的研究，实现了这样的功能：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1、选中一张你想添加到文章里的图片&lt;/p&gt;
+&lt;p&gt;2、按下某个类似于Ctrl+C的快捷键（自定义任意组合）&lt;/p&gt;
+&lt;p&gt;3、图片自动跑到你博客程序的images文件夹里去了&lt;/p&gt;
+&lt;p&gt;3、图片自己给自己设置了一个永远不会重复冲突的名字&lt;/p&gt;
+&lt;p&gt;3、图片把自己的路径放进了剪贴板&lt;/p&gt;
+&lt;p&gt;4、你在你写的文章里Ctrl+V粘贴即可&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;是不是很方便！！！&lt;/p&gt;
+&lt;p&gt;是不是很方便！！！&lt;/p&gt;
+&lt;p&gt;是不是很方便！！！&lt;/p&gt;
+&lt;p&gt;为了造福广大人民群众，我把AutoHotkey的脚本代码放上来&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cm"&gt;/*&lt;/span&gt;
+
+&lt;span class="cm"&gt;作者：徐费皓苒  xfhrv.cn&lt;/span&gt;
+
+&lt;span class="cm"&gt;说明：此脚本实现了复制选中的图片，自动copy到指定目录，且重命名为当前时间，并将文件名copy到剪贴板备用&lt;/span&gt;
+
+&lt;span class="cm"&gt;用法：运行脚本，选中需要copy的图片，按下Ctrl+Shift+C即可&lt;/span&gt;
+
+&lt;span class="cm"&gt;*/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+
+&lt;span class="err"&gt;^&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nl"&gt;c&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+send&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;^&lt;/span&gt;c&lt;span class="w"&gt;&lt;/span&gt;
+
+clipwait&lt;span class="w"&gt;&lt;/span&gt;
+
+filename&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;clipboard&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;copy剪贴板的完整文件路径&lt;span class="err"&gt;、名称&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+subpart&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+StringGetPos&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;index&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;filename&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;subpart&lt;span class="o"&gt;%,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;R&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="kr"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;index&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;SubStr&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;filename&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;index&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nl"&gt;path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;SubStr&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;filename&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;index&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nl"&gt;ext&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;SubStr&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;filename&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+newname&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;A_Now&lt;span class="o"&gt;%%&lt;/span&gt;ext&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+FileCopy&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;path&lt;span class="o"&gt;%%&lt;/span&gt;name&lt;span class="o"&gt;%,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;Users&lt;span class="o"&gt;\&lt;/span&gt;xfhrv&lt;span class="o"&gt;\&lt;/span&gt;Desktop&lt;span class="o"&gt;\&lt;/span&gt;blog&lt;span class="o"&gt;\&lt;/span&gt;content&lt;span class="o"&gt;\&lt;/span&gt;images&lt;span class="o"&gt;\%&lt;/span&gt;newname&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+clipboard&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;![]&lt;/span&gt;&lt;span class="o"&gt;(/&lt;/span&gt;images&lt;span class="o"&gt;/%&lt;/span&gt;newname&lt;span class="o"&gt;%)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="kr"&gt;return&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;时间太晚了，我要睡觉了，明天还得上班 ╯﹏╰&lt;/p&gt;</content><category term="AutoHotkey"></category></entry><entry><title>又是一个新博客</title><link href="http://xfhrv.cn/you-shi-yi-ge-xin-bo-ke.html" rel="alternate"></link><published>2017-03-03T17:15:00+08:00</published><updated>2017-03-04T05:40:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-03:/you-shi-yi-ge-xin-bo-ke.html</id><summary type="html"></summary><content type="html">&lt;p&gt;买了个新笔记本，WIN10，装了PYTHON。就重新用Pelican搞了一个静态博客，把之前InkPaper纸小墨的内容移植过来。&lt;/p&gt;
 &lt;p&gt;这个博客以后主要发布一些工作相关的技术文章，大概就是些关于BIM的内容吧。&lt;/p&gt;
 &lt;p&gt;毕竟域名的租金不能白交 : P &lt;/p&gt;
 &lt;p&gt;内容呢，暂时寄存在Github上，国内空间备案什么的麻烦死了。&lt;/p&gt;
-&lt;p&gt;又折腾了一晚上，天马上亮了，碎觉╯﹏╰&lt;/p&gt;</content><category term="杂文"></category></entry><entry><title>折腾Git！</title><link href="http://xfhrv.cn/zhe-teng-git.html" rel="alternate"></link><published>2015-11-05T21:48:00+08:00</published><updated>2015-11-05T21:48:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2015-11-05:/zhe-teng-git.html</id><summary type="html"></summary><content type="html">&lt;h1&gt;配置Terminal中的Git&lt;/h1&gt;
+&lt;p&gt;又折腾了一晚上，天马上亮了，碎觉╯﹏╰&lt;/p&gt;</content><category term="浅见"></category></entry><entry><title>折腾Git！</title><link href="http://xfhrv.cn/zhe-teng-git.html" rel="alternate"></link><published>2015-11-05T21:48:00+08:00</published><updated>2015-11-05T21:48:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2015-11-05:/zhe-teng-git.html</id><summary type="html"></summary><content type="html">&lt;h1&gt;配置Terminal中的Git&lt;/h1&gt;
 &lt;h2&gt;这文章就是为了测试&lt;/h2&gt;
 &lt;p&gt;折腾了这么久的命令行Git，现在始终得测试一下是否可用。&lt;!--more--&gt;&lt;/p&gt;
 &lt;h2&gt;我成功啦！&lt;/h2&gt;
@@ -132,7 +203,7 @@ test$
 &lt;li&gt;&lt;a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="Git教程"&gt;Git教程－廖雪峰的官方网站&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.bootcss.com/p/git-guide/"&gt;Git使用简易指南－Bootstrap中文网&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;"Git Manual"&lt;/li&gt;
-&lt;/ul&gt;</content><category term="技术"></category><category term="Excel"></category></entry><entry><title>好用的Excel宏</title><link href="http://xfhrv.cn/hao-yong-de-excelhong.html" rel="alternate"></link><published>2015-11-05T11:16:00+08:00</published><updated>2015-11-05T16:19:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2015-11-05:/hao-yong-de-excelhong.html</id><summary type="html"></summary><content type="html">&lt;p&gt;Excel的Macros真心强大！&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Git"></category></entry><entry><title>好用的Excel宏</title><link href="http://xfhrv.cn/hao-yong-de-excelhong.html" rel="alternate"></link><published>2015-11-05T11:16:00+08:00</published><updated>2015-11-05T16:19:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2015-11-05:/hao-yong-de-excelhong.html</id><summary type="html"></summary><content type="html">&lt;p&gt;Excel的Macros真心强大！&lt;/p&gt;
 &lt;p&gt;刚刚工作的时候想批量复制Sheets，依次按数字序列1,2,3,……,N命名排序，顺手百度上一搜就出来了以下代码&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Sub test()
     For i = 2 To 12
@@ -146,4 +217,4 @@ End Sub
 &lt;p&gt;&lt;a href="http://club.excelhome.net/thread-1072929-1-1.html" title="[求助] 急求！如何批量复制并重命名工作表！"&gt;引用来源：ExcelHome 帖子“[求助] 急求！如何批量复制并重命名工作表！”&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="创建宏" src="/images/excel_macros_1.png" title="创建宏"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="编辑宏" src="/images/excel_macros_2.png" title="编辑宏"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="运行结果" src="/images/excel_macros_3.png" title="运行结果"&gt;&lt;/p&gt;</content><category term="技术"></category><category term="Excel"></category></entry></feed>
+&lt;p&gt;&lt;img alt="运行结果" src="/images/excel_macros_3.png" title="运行结果"&gt;&lt;/p&gt;</content><category term="Excel"></category></entry></feed>

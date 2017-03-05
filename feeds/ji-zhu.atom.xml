@@ -128,7 +128,7 @@ test$
 &lt;li&gt;&lt;a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="Git教程"&gt;Git教程－廖雪峰的官方网站&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.bootcss.com/p/git-guide/"&gt;Git使用简易指南－Bootstrap中文网&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;"Git Manual"&lt;/li&gt;
-&lt;/ul&gt;</content><category term="技术"></category><category term="Excel"></category></entry><entry><title>好用的Excel宏</title><link href="http://xfhrv.cn/hao-yong-de-excelhong.html" rel="alternate"></link><published>2015-11-05T11:16:00+08:00</published><updated>2015-11-05T16:19:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2015-11-05:/hao-yong-de-excelhong.html</id><summary type="html"></summary><content type="html">&lt;p&gt;Excel的Macros真心强大！&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Git"></category></entry><entry><title>好用的Excel宏</title><link href="http://xfhrv.cn/hao-yong-de-excelhong.html" rel="alternate"></link><published>2015-11-05T11:16:00+08:00</published><updated>2015-11-05T16:19:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2015-11-05:/hao-yong-de-excelhong.html</id><summary type="html"></summary><content type="html">&lt;p&gt;Excel的Macros真心强大！&lt;/p&gt;
 &lt;p&gt;刚刚工作的时候想批量复制Sheets，依次按数字序列1,2,3,……,N命名排序，顺手百度上一搜就出来了以下代码&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Sub test()
     For i = 2 To 12
@@ -142,4 +142,4 @@ End Sub
 &lt;p&gt;&lt;a href="http://club.excelhome.net/thread-1072929-1-1.html" title="[求助] 急求！如何批量复制并重命名工作表！"&gt;引用来源：ExcelHome 帖子“[求助] 急求！如何批量复制并重命名工作表！”&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="创建宏" src="/images/excel_macros_1.png" title="创建宏"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="编辑宏" src="/images/excel_macros_2.png" title="编辑宏"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="运行结果" src="/images/excel_macros_3.png" title="运行结果"&gt;&lt;/p&gt;</content><category term="技术"></category><category term="Excel"></category></entry></feed>
+&lt;p&gt;&lt;img alt="运行结果" src="/images/excel_macros_3.png" title="运行结果"&gt;&lt;/p&gt;</content><category term="Excel"></category></entry></feed>
