@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>徐费皓苒 xfhrv.cn - 技术</title><link href="http://xfhrv.cn/" rel="alternate"></link><link href="http://xfhrv.cn/feeds/ji-zhu.atom.xml" rel="self"></link><id>http://xfhrv.cn/</id><updated>2017-03-06T16:53:00+08:00</updated><entry><title>Civil3D地形曲面生成与编辑处理</title><link href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li.html" rel="alternate"></link><published>2017-03-06T16:53:00+08:00</published><updated>2017-03-06T16:53:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-06:/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li.html</id><summary type="html">&lt;p&gt;Civil3D基础教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="" src="/images/20170306110522.gif"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>徐费皓苒 xfhrv.cn - 技术</title><link href="http://xfhrv.cn/" rel="alternate"></link><link href="http://xfhrv.cn/feeds/ji-zhu.atom.xml" rel="self"></link><id>http://xfhrv.cn/</id><updated>2017-03-06T16:53:00+08:00</updated><entry><title>Civil3D地形曲面生成与编辑处理（一）从高程点生成地形曲面</title><link href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-yi-cong-gao-cheng-dian-sheng-cheng-di-xing-qu-mian.html" rel="alternate"></link><published>2017-03-06T16:53:00+08:00</published><updated>2017-03-06T16:53:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-06:/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-yi-cong-gao-cheng-dian-sheng-cheng-di-xing-qu-mian.html</id><summary type="html">&lt;p&gt;Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="" src="/images/20170306110522.gif"&gt;&lt;/p&gt;
 &lt;h2&gt;生成&lt;/h2&gt;
 &lt;p&gt;咱们生成地形曲面其实方法有很多，我们就来看看两种最简单、常用的生成方法：&lt;strong&gt;从高程点&lt;/strong&gt;和&lt;strong&gt;从等高线&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;我们还可以用Civil3D软件自动&lt;strong&gt;融合&lt;/strong&gt;他们的信息，生成一个更加真实、平滑的地形曲面。&lt;/p&gt;
@@ -77,94 +77,7 @@
 &lt;/ol&gt;
 &lt;p&gt;&lt;img alt="" src="/images/20170306164605.gif"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4&gt;从等高线&lt;/h4&gt;
-&lt;h6&gt;原始等高线导出&lt;/h6&gt;
-&lt;p&gt;判断等高线类型
-查看特性
-检查XYZ坐标数据是否正确
-主要查看是否具有Z坐标、标高信息
-查看等高线图层是否正确
-是否全部在一个图层里
-确保拷贝时选中所有的等高线
-将所有等高线拷贝到新文件
-使用选中类似对象工具
-在新文件中点击“粘贴到原坐标”
-空白处右键
-剪贴板
-粘贴到原坐标&lt;/p&gt;
-&lt;h6&gt;创建“曲面”&lt;/h6&gt;
-&lt;p&gt;在新文件左侧的“工具空间”中找到“曲面”
-右键“创建曲面”
-创建“三角面曲面”
-确定&lt;/p&gt;
-&lt;h6&gt;使用“等高线”导入高程点信息&lt;/h6&gt;
-&lt;p&gt;点击“+”展开“曲面”-&amp;gt;“Surface(1) 或 曲面(1)”-&amp;gt; "定义"
-找到“等高线”
-右键
-添加
-弹出“添加等高线数据”
-确定
-框选所有等高线
-空格 或 回车&lt;/p&gt;
-&lt;h6&gt;生成“曲面”&lt;/h6&gt;
-&lt;p&gt;Civil3D自动生成曲面&lt;/p&gt;
-&lt;h6&gt;查看生成的曲面&lt;/h6&gt;
-&lt;p&gt;选中刚刚生成的曲面
-右键
-对象查看器&lt;/p&gt;
-&lt;h4&gt;Tips&lt;/h4&gt;
-&lt;h6&gt;根据使用精度来确定数据详细程度&lt;/h6&gt;
-&lt;h6&gt;点、线越密集数据越准确&lt;/h6&gt;
-&lt;h6&gt;可以将点、线结合在一起&lt;/h6&gt;
-&lt;h6&gt;如需要的精度不高，也可只使用等高线&lt;/h6&gt;
-&lt;h2&gt;编辑处理&lt;/h2&gt;
-&lt;h4&gt;删除错误高程点&lt;/h4&gt;
-&lt;h6&gt;查看生成的曲面&lt;/h6&gt;
-&lt;p&gt;选中刚刚生成的曲面
-右键
-对象查看器&lt;/p&gt;
-&lt;h6&gt;删除错误的高程点&lt;/h6&gt;
-&lt;p&gt;检查曲面
-找到错误的高程点
-选中并删除错误高程点&lt;/p&gt;
-&lt;h6&gt;重新生成曲面&lt;/h6&gt;
-&lt;p&gt;点击“+”展开“曲面”-&amp;gt;“Surface(1) 或 曲面(1)”
-右键
-重新生成&lt;/p&gt;
-&lt;h4&gt;用高程排除错误测量点&lt;/h4&gt;
-&lt;p&gt;点击“+”展开“曲面”-&amp;gt;“Surface(1) 或 曲面(1)”
-右键
-曲面特性
-弹出“曲面特性”设置框
-找到“定义”选项卡
-查看“定义选项”
-点击“+”展开“生成”
-找到“排除小于此值的高程”
-将“否”改为“是”
-找到“高程 &amp;lt;”
-设置一个合适的高程
-如“1000米”
-点击“确定”关闭“曲面特性”设置框
-弹出“重新生成曲面”提示框
-点击“重新生成曲面”
-Civil3D自动排除“高程小于1000米”的“高程点”或“等高线”&lt;/p&gt;
-&lt;h4&gt;指定三角网边长去除不必要的自动连接线&lt;/h4&gt;
-&lt;p&gt;点击“+”展开“曲面”-&amp;gt;“Surface(1) 或 曲面(1)”
-右键
-曲面特性
-弹出“曲面特性”设置框
-找到“定义”选项卡
-查看“定义选项”
-点击“+”展开“生成”
-找到“使用三角形最大边长”
-将“否”改为“是”
-找到“三角形最大边长”
-设置一个合适的高程
-如“100米”
-点击“确定”关闭“曲面特性”设置框
-弹出“重新生成曲面”提示框
-点击“重新生成曲面”
-Civil3D自动去除“边长大于100米”三角形边&lt;/p&gt;</content><category term="BIM"></category><category term="Civil3D"></category></entry><entry><title>折腾Git！</title><link href="http://xfhrv.cn/zhe-teng-git.html" rel="alternate"></link><published>2015-11-05T21:48:00+08:00</published><updated>2015-11-05T21:48:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2015-11-05:/zhe-teng-git.html</id><summary type="html"></summary><content type="html">&lt;h1&gt;配置Terminal中的Git&lt;/h1&gt;
+&lt;p&gt;是不是很简单，你学会了吗？&lt;/p&gt;</content><category term="BIM"></category><category term="Civil3D"></category></entry><entry><title>折腾Git！</title><link href="http://xfhrv.cn/zhe-teng-git.html" rel="alternate"></link><published>2015-11-05T21:48:00+08:00</published><updated>2015-11-05T21:48:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2015-11-05:/zhe-teng-git.html</id><summary type="html"></summary><content type="html">&lt;h1&gt;配置Terminal中的Git&lt;/h1&gt;
 &lt;h2&gt;这文章就是为了测试&lt;/h2&gt;
 &lt;p&gt;折腾了这么久的命令行Git，现在始终得测试一下是否可用。&lt;!--more--&gt;&lt;/p&gt;
 &lt;h2&gt;我成功啦！&lt;/h2&gt;
