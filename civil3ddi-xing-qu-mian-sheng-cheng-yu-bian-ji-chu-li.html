@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet/less" type="text/css" href="http://xfhrv.cn/theme/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://xfhrv.cn/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://xfhrv.cn/theme/font-awesome/css/font-awesome.min.css">
+
+    <link href="http://xfhrv.cn/static/custom.css" rel="stylesheet">
+
+    <link href="http://xfhrv.cn/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="徐费皓苒 xfhrv.cn Atom">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="徐费皓苒" />
+<meta name="description" content="" />
+<meta name="keywords" content="BIM, Civil3D">
+<meta property="og:site_name" content="徐费皓苒 xfhrv.cn"/>
+<meta property="og:title" content="Civil3D地形曲面生成与编辑处理"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-03-05 23:40:00+08:00"/>
+<meta property="article:modified_time" content="2017-03-05 23:40:00+08:00"/>
+<meta property="article:author" content="http://xfhrv.cn/author/xu-fei-hao-ran.html">
+<meta property="article:section" content="技术"/>
+<meta property="article:tag" content="BIM"/>
+<meta property="article:tag" content="Civil3D"/>
+<meta property="og:image" content="/images/head.jpg">
+
+  <title>徐费皓苒 xfhrv.cn &ndash; Civil3D地形曲面生成与编辑处理</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://xfhrv.cn">
+        <img src="/images/head.jpg" alt="徐费皓苒" title="徐费皓苒">
+      </a>
+      <h1><a href="http://xfhrv.cn">徐费皓苒</a></h1>
+
+<p>Focus on BIM</p><!--百度站内搜索-->
+	<p><script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=3405214655814614710' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script></p>
+<!--百度站内搜索-->
+
+      <nav>
+        <ul class="list">
+          <li><a href="http://xfhrv.cn/pages/about-me.html#about-me">ABOUT ME</a></li>
+
+          <li><a href="mailto:xfhrv@qq.com" target="_blank">Contact Me</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="http://www.linkedin.com/in/%E8%B4%B9%E7%9A%93%E8%8B%92-%E5%BE%90-04ab5b69/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/xfhrv" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-rss" href="//xfhrv.cn/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://xfhrv.cn">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://xfhrv.cn/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li">Civil3D地形曲面生成与编辑处理</h1>
+    <p>
+          Posted on 周日 05 三月 2017 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1>Civil3D地形曲面生成与编辑处理</h1>
+<p><img alt="" src="/images/20170306110522.gif"></p>
+<p>[TOC]</p>
+<h2>生成</h2>
+<p>咱们生成地形曲面其实方法有很多，我们就来看看两种最简单、常用的生成方法：<strong>从高程点</strong>和<strong>从等高线</strong>。</p>
+<p>我们还可以用Civil3D软件自动<strong>融合</strong>他们的信息，生成一个更加真实、平滑的地形曲面。</p>
+<p>那我们正式开始。</p>
+<p>首先我们需要有一个原始地形数据文件。一般来说总平图、方案布置图里有地形信息，我们可以稍微处理一下数据，将我们需要的高程点、等高线copy到新的文件中处理。这样做的好处是<strong>软件运转会更快</strong>，而且<strong>数据不易出错</strong>。</p>
+<p>处理数据后，我们会得到一个类似这样的数据：</p>
+<p><img alt="" src="/images/20170306161227.png"></p>
+<h4>从高程点</h4>
+<h6>原始高程点导出</h6>
+<p>首先，我们需要<strong>查看原始数据高程点的数据类型</strong>是什么，具体方法是：查看特性</p>
+<blockquote>
+<p>查看点类型是否为块参照：选中点-&gt;特性</p>
+<p><img alt="" src="/images/20170306162508.gif"></p>
+<p>Tips：同时我们也需要检查</p>
+<ol>
+<li>XYZ坐标数据是否正确</li>
+<li>查看高程点图层是否正确</li>
+<li>是否全部在一个图层里</li>
+</ol>
+</blockquote>
+<p>第二步，我们<strong>将所有高程点拷贝到新文件</strong></p>
+<blockquote>
+<p>Step 1 确保拷贝时选中所有的点：</p>
+<ol>
+<li>使用选中类似对象工具</li>
+<li>隔离选中项以确保所有的点被正确选中</li>
+<li>Ctrl+C 复制</li>
+</ol>
+<p><img alt="" src="/images/20170306163005.gif">
+<img alt="" src="/images/20170306163326.png"></p>
+<p>Step 2 在新文件中点击“粘贴到原坐标”</p>
+<ol>
+<li>空白处右键</li>
+<li>剪贴板</li>
+<li>粘贴到原坐标</li>
+<li>使用ZE命令将视图缩放到刚粘贴处，确保高程点被正确粘贴</li>
+</ol>
+<p><img alt="" src="/images/20170306163523.gif"></p>
+</blockquote>
+<h6>创建“曲面”</h6>
+<p>我们现在有了高程点数据，就可以创建曲面了。</p>
+<blockquote>
+<ol>
+<li>在新文件左侧的“工具空间”中找到“曲面”</li>
+<li>右键“创建曲面”</li>
+<li>创建“三角面曲面”</li>
+<li>确定</li>
+</ol>
+<p><img alt="" src="/images/20170306163929.gif"></p>
+</blockquote>
+<h6>使用“图形对象”导入高程点信息</h6>
+<blockquote>
+<ol>
+<li>点击“+”展开“曲面”-&gt;“Surface(1) 或 曲面(1)”-&gt; "定义"</li>
+<li>找到“图形对象”</li>
+<li>右键-&gt;添加</li>
+<li>弹出“从图形对象添加点”</li>
+<li>对象类型选中“块”</li>
+<li>确定</li>
+<li>框选所有高程点“块”</li>
+<li>空格 或 回车</li>
+</ol>
+<p><img alt="" src="/images/20170306164237.gif"></p>
+</blockquote>
+<h6>生成“曲面”</h6>
+<p>Civil3D自动生成曲面</p>
+<p><img alt="" src="/images/20170306164246.png"></p>
+<h6>查看生成的曲面</h6>
+<blockquote>
+<ol>
+<li>选中刚刚生成的曲面</li>
+<li>右键</li>
+<li>对象查看器</li>
+<li>查看曲面</li>
+</ol>
+<p><img alt="" src="/images/20170306164605.gif"></p>
+</blockquote>
+<h4>从等高线</h4>
+<h6>原始等高线导出</h6>
+<p>判断等高线类型
+查看特性
+检查XYZ坐标数据是否正确
+主要查看是否具有Z坐标、标高信息
+查看等高线图层是否正确
+是否全部在一个图层里
+确保拷贝时选中所有的等高线
+将所有等高线拷贝到新文件
+使用选中类似对象工具
+在新文件中点击“粘贴到原坐标”
+空白处右键
+剪贴板
+粘贴到原坐标</p>
+<h6>创建“曲面”</h6>
+<p>在新文件左侧的“工具空间”中找到“曲面”
+右键“创建曲面”
+创建“三角面曲面”
+确定</p>
+<h6>使用“等高线”导入高程点信息</h6>
+<p>点击“+”展开“曲面”-&gt;“Surface(1) 或 曲面(1)”-&gt; "定义"
+找到“等高线”
+右键
+添加
+弹出“添加等高线数据”
+确定
+框选所有等高线
+空格 或 回车</p>
+<h6>生成“曲面”</h6>
+<p>Civil3D自动生成曲面</p>
+<h6>查看生成的曲面</h6>
+<p>选中刚刚生成的曲面
+右键
+对象查看器</p>
+<h4>Tips</h4>
+<h6>根据使用精度来确定数据详细程度</h6>
+<h6>点、线越密集数据越准确</h6>
+<h6>可以将点、线结合在一起</h6>
+<h6>如需要的精度不高，也可只使用等高线</h6>
+<h2>编辑处理</h2>
+<h4>删除错误高程点</h4>
+<h6>查看生成的曲面</h6>
+<p>选中刚刚生成的曲面
+右键
+对象查看器</p>
+<h6>删除错误的高程点</h6>
+<p>检查曲面
+找到错误的高程点
+选中并删除错误高程点</p>
+<h6>重新生成曲面</h6>
+<p>点击“+”展开“曲面”-&gt;“Surface(1) 或 曲面(1)”
+右键
+重新生成</p>
+<h4>用高程排除错误测量点</h4>
+<p>点击“+”展开“曲面”-&gt;“Surface(1) 或 曲面(1)”
+右键
+曲面特性
+弹出“曲面特性”设置框
+找到“定义”选项卡
+查看“定义选项”
+点击“+”展开“生成”
+找到“排除小于此值的高程”
+将“否”改为“是”
+找到“高程 &lt;”
+设置一个合适的高程
+如“1000米”
+点击“确定”关闭“曲面特性”设置框
+弹出“重新生成曲面”提示框
+点击“重新生成曲面”
+Civil3D自动排除“高程小于1000米”的“高程点”或“等高线”</p>
+<h4>指定三角网边长去除不必要的自动连接线</h4>
+<p>点击“+”展开“曲面”-&gt;“Surface(1) 或 曲面(1)”
+右键
+曲面特性
+弹出“曲面特性”设置框
+找到“定义”选项卡
+查看“定义选项”
+点击“+”展开“生成”
+找到“使用三角形最大边长”
+将“否”改为“是”
+找到“三角形最大边长”
+设置一个合适的高程
+如“100米”
+点击“确定”关闭“曲面特性”设置框
+弹出“重新生成曲面”提示框
+点击“重新生成曲面”
+Civil3D自动去除“边长大于100米”三角形边</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://xfhrv.cn/tag/bim.html">BIM</a>
+      <a href="http://xfhrv.cn/tag/civil3d.html">Civil3D</a>
+    </p>
+  </div>
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'xfhrv-cn';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>
+  &copy; 徐费皓苒 2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " 徐费皓苒 xfhrv.cn ",
+  "url" : "http://xfhrv.cn",
+  "image": "/images/head.jpg",
+  "description": "徐费皓苒\的博客"
+}
+</script>
+</body>
+</html>
