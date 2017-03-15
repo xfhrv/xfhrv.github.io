@@ -32,18 +32,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <meta name="author" content="徐费皓苒" />
-    <meta name="description" content="徐费皓苒\的博客" />
+<meta name="author" content="徐费皓苒" />
+<meta name="description" content="Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~" />
+<meta name="keywords" content="BIM, Civil3D">
 <meta property="og:site_name" content="徐费皓苒 xfhrv.cn"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="徐费皓苒 xfhrv.cn"/>
-<meta property="og:description" content="徐费皓苒\的博客"/>
+<meta property="og:title" content="Civil3D地形曲面生成与编辑处理（二）从等高线生成地形曲面"/>
+<meta property="og:description" content="Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://xfhrv.cn"/>
+<meta property="og:url" content="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-03-06 16:53:00+08:00"/>
+<meta property="article:modified_time" content="2017-03-15 17:11:00+08:00"/>
+<meta property="article:author" content="http://xfhrv.cn/author/xu-fei-hao-ran.html">
+<meta property="article:section" content="技术"/>
+<meta property="article:tag" content="BIM"/>
+<meta property="article:tag" content="Civil3D"/>
 <meta property="og:image" content="/images/head.jpg">
 
-  <title>徐费皓苒 xfhrv.cn &ndash;     Category 技术
-</title>
+  <title>徐费皓苒 xfhrv.cn &ndash; Civil3D地形曲面生成与编辑处理（二）从等高线生成地形曲面</title>
 
 </head>
 <body>
@@ -108,93 +114,118 @@
 
     </nav>
 
-
-
-<article>
+<article class="single">
   <header>
-    <h2><a href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian.html#civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian">Civil3D地形曲面生成与编辑处理（二）从等高线生成地形曲面</a></h2>
+    <h1 id="civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian">Civil3D地形曲面生成与编辑处理（二）从等高线生成地形曲面</h1>
     <p>
           Posted on 周一 06 三月 2017 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
 
 
-          &#8226;     Tagged with
-
-              <a href="http://xfhrv.cn/tag/bim.html">BIM</a>,              <a href="http://xfhrv.cn/tag/civil3d.html">Civil3D</a>
     </p>
   </header>
+
+
   <div>
-      <p>Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~</p>
-      <br>
-      <a class="btn" href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian.html#civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian">    Continue reading
-</a>
+    <p><img alt="" src="/images/20170306110522.gif"></p>
+<h2>生成</h2>
+<p>咱们生成地形曲面其实方法有很多，我们就来看看两种最简单、常用的生成方法：<strong>从高程点</strong>和<strong>从等高线</strong>。</p>
+<p>我们还可以用Civil3D软件自动<strong>融合</strong>他们的信息，生成一个更加真实、平滑的地形曲面。</p>
+<p>那我们正式开始。</p>
+<p>首先我们需要有一个原始地形数据文件。一般来说总平图、方案布置图里有地形信息，我们可以稍微处理一下数据，将我们需要的高程点、等高线copy到新的文件中处理。这样做的好处是<strong>软件运转会更快</strong>，而且<strong>数据不易出错</strong>。</p>
+<p>处理数据后，我们会得到一个类似这样的数据：</p>
+<p><img alt="" src="/images/20170306161227.png"></p>
+<h4>从等高线</h4>
+<h6>原始等高线导出</h6>
+<p>判断等高线类型</p>
+<blockquote>
+<p>查看特性</p>
+<p><img alt="" src="/images/20170315165851.gif"></p>
+<ul>
+<li>检查XYZ坐标数据是否正确</li>
+<li>主要查看是否具有Z坐标、标高信息</li>
+<li>查看等高线图层是否正确</li>
+<li>是否全部在一个图层里</li>
+</ul>
+</blockquote>
+<p>将等高线拷贝到新文件</p>
+<blockquote>
+<ul>
+<li>确保拷贝时选中所有的等高线</li>
+<li>将所有等高线拷贝到新文件</li>
+<li>使用选中类似对象工具</li>
+<li>在新文件中点击“粘贴到原坐标”</li>
+<li>空白处右键</li>
+<li>剪贴板</li>
+<li>粘贴到原坐标</li>
+</ul>
+<p><img alt="" src="/images/20170315170455.gif"></p>
+</blockquote>
+<h6>创建“曲面”</h6>
+<blockquote>
+<ul>
+<li>在新文件左侧的“工具空间”中找到“曲面”</li>
+<li>右键“创建曲面”</li>
+<li>创建“三角面曲面”</li>
+<li>确定</li>
+</ul>
+<p><img alt="" src="/images/20170315170716.gif"></p>
+</blockquote>
+<h6>使用“等高线”导入高程点信息</h6>
+<blockquote>
+<ul>
+<li>点击“+”展开“曲面”-&gt;“Surface(1) 或 曲面(1)”-&gt; "定义"</li>
+<li>找到“等高线”</li>
+<li>右键</li>
+<li>添加</li>
+<li>弹出“添加等高线数据”</li>
+<li>确定</li>
+<li>框选所有等高线</li>
+<li>空格 或 回车</li>
+</ul>
+<p><img alt="" src="/images/20170315170833.gif"></p>
+</blockquote>
+<h6>生成“曲面”</h6>
+<p>Civil3D自动生成曲面</p>
+<p><img alt="" src="/images/20170306164246.png"></p>
+<h6>查看生成的曲面</h6>
+<blockquote>
+<ul>
+<li>选中刚刚生成的曲面</li>
+<li>右键</li>
+<li>对象查看器</li>
+</ul>
+<p><img alt="" src="/images/20170306164605.gif"></p>
+</blockquote>
+<h4>Tips</h4>
+<h6>根据使用精度来确定数据详细程度</h6>
+<h6>点、线越密集数据越准确</h6>
+<h6>可以将点、线结合在一起</h6>
+<h6>如需要的精度不高，也可只使用等高线</h6>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-yi-cong-gao-cheng-dian-sheng-cheng-di-xing-qu-mian.html#civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-yi-cong-gao-cheng-dian-sheng-cheng-di-xing-qu-mian">Civil3D地形曲面生成与编辑处理（一）从高程点生成地形曲面</a></h2>
+  <div class="tag-cloud">
     <p>
-          Posted on 周一 06 三月 2017 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="http://xfhrv.cn/tag/bim.html">BIM</a>,              <a href="http://xfhrv.cn/tag/civil3d.html">Civil3D</a>
+      <a href="http://xfhrv.cn/tag/bim.html">BIM</a>
+      <a href="http://xfhrv.cn/tag/civil3d.html">Civil3D</a>
     </p>
-  </header>
-  <div>
-      <p>Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~</p>
-      <br>
-      <a class="btn" href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-yi-cong-gao-cheng-dian-sheng-cheng-di-xing-qu-mian.html#civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-yi-cong-gao-cheng-dian-sheng-cheng-di-xing-qu-mian">    Continue reading
-</a>
   </div>
-  <hr />
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'xfhrv-cn';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
 </article>
-<article>
-  <header>
-    <h2><a href="http://xfhrv.cn/zhe-teng-git.html#zhe-teng-git">折腾Git！</a></h2>
-    <p>
-          Posted on 周四 05 十一月 2015 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="http://xfhrv.cn/tag/git.html">Git</a>
-    </p>
-  </header>
-  <div>
-      
-      <br>
-      <a class="btn" href="http://xfhrv.cn/zhe-teng-git.html#zhe-teng-git">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://xfhrv.cn/hao-yong-de-excelhong.html#hao-yong-de-excelhong">好用的Excel宏</a></h2>
-    <p>
-          Posted on 周四 05 十一月 2015 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="http://xfhrv.cn/tag/excel.html">Excel</a>
-    </p>
-  </header>
-  <div>
-      
-      <br>
-      <a class="btn" href="http://xfhrv.cn/hao-yong-de-excelhong.html#hao-yong-de-excelhong">    Continue reading
-</a>
-  </div>
-</article>
-
-  <div class="pagination">
-  </div>
-
-
-
 
     <footer>
 <p>
