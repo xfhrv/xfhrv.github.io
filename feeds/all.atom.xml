@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>徐费皓苒 xfhrv.cn</title><link href="http://xfhrv.cn/" rel="alternate"></link><link href="http://xfhrv.cn/feeds/all.atom.xml" rel="self"></link><id>http://xfhrv.cn/</id><updated>2017-03-16T21:24:00+08:00</updated><entry><title>百度地图批量解析地址[视频]</title><link href="http://xfhrv.cn/bai-du-di-tu-pi-liang-jie-xi-di-zhi-shi-pin.html" rel="alternate"></link><published>2017-03-16T21:24:00+08:00</published><updated>2017-03-16T21:24:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-16:/bai-du-di-tu-pi-liang-jie-xi-di-zhi-shi-pin.html</id><summary type="html">&lt;p&gt;你曾经遇到过拿到一堆地址不知所措吗？今天我会分享一个小技巧，在地图上批量标注你拿到的那“一堆地址”！&lt;/p&gt;</summary><content type="html">&lt;video src="/video/20170316212309.webm" width="800" height="600" controls="controls"&gt;&lt;/video&gt;</content><category term="地图解析"></category><category term="视频"></category></entry><entry><title>Civil3D地形曲面生成与编辑处理（三）编辑处理</title><link href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-san-bian-ji-chu-li.html" rel="alternate"></link><published>2017-03-16T20:20:00+08:00</published><updated>2017-03-16T20:20:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-16:/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-san-bian-ji-chu-li.html</id><summary type="html">&lt;p&gt;Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~&lt;/p&gt;</summary><content type="html">&lt;h2&gt;编辑处理&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>徐费皓苒 xfhrv.cn</title><link href="http://xfhrv.cn/" rel="alternate"></link><link href="http://xfhrv.cn/feeds/all.atom.xml" rel="self"></link><id>http://xfhrv.cn/</id><updated>2017-03-16T21:24:00+08:00</updated><entry><title>百度地图批量解析地址[视频]</title><link href="http://xfhrv.cn/bai-du-di-tu-pi-liang-jie-xi-di-zhi-shi-pin.html" rel="alternate"></link><published>2017-03-16T21:24:00+08:00</published><updated>2017-03-16T21:24:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-16:/bai-du-di-tu-pi-liang-jie-xi-di-zhi-shi-pin.html</id><summary type="html">&lt;p&gt;你曾经遇到过拿到一堆地址不知所措吗？今天我会分享一个小技巧，在地图上批量标注你拿到的那“一堆地址”！&lt;/p&gt;</summary><content type="html">&lt;h3&gt;效果：&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="/images/20170316214706.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/images/20170316214737.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/images/20170316214747.png"&gt;&lt;/p&gt;
+&lt;h3&gt;视频教程：&lt;/h3&gt;
+&lt;video src="/video/201703162146417.mp4" width="800" height="600" controls="controls"&gt;&lt;/video&gt;
+
+&lt;h3&gt;百度地图解析地址：&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;http://developer.baidu.com/map/jsdemo.htm#i7_3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://developer.baidu.com/map/jsdemo.htm#i7_3"&gt;或者点我直达&lt;/a&gt;&lt;/p&gt;</content><category term="地图解析"></category><category term="视频"></category></entry><entry><title>Civil3D地形曲面生成与编辑处理（三）编辑处理</title><link href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-san-bian-ji-chu-li.html" rel="alternate"></link><published>2017-03-16T20:20:00+08:00</published><updated>2017-03-16T20:20:00+08:00</updated><author><name>徐费皓苒</name></author><id>tag:xfhrv.cn,2017-03-16:/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-san-bian-ji-chu-li.html</id><summary type="html">&lt;p&gt;Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~&lt;/p&gt;</summary><content type="html">&lt;h2&gt;编辑处理&lt;/h2&gt;
 &lt;h4&gt;删除错误高程点&lt;/h4&gt;
 &lt;h6&gt;删除错误的高程点&lt;/h6&gt;
 &lt;blockquote&gt;
