@@ -36,20 +36,20 @@
 <meta name="description" content="Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~" />
 <meta name="keywords" content="BIM, Civil3D">
 <meta property="og:site_name" content="徐费皓苒 xfhrv.cn"/>
-<meta property="og:title" content="Civil3D地形曲面生成与编辑处理（二）从等高线生成地形曲面"/>
+<meta property="og:title" content="Civil3D地形曲面生成与编辑处理（三）编辑处理"/>
 <meta property="og:description" content="Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian.html"/>
+<meta property="og:url" content="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-san-bian-ji-chu-li.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2017-03-15 17:11:00+08:00"/>
-<meta property="article:modified_time" content="2017-03-15 17:11:00+08:00"/>
+<meta property="article:published_time" content="2017-03-16 20:20:00+08:00"/>
+<meta property="article:modified_time" content="2017-03-16 20:20:00+08:00"/>
 <meta property="article:author" content="http://xfhrv.cn/author/xu-fei-hao-ran.html">
 <meta property="article:section" content="技术"/>
 <meta property="article:tag" content="BIM"/>
 <meta property="article:tag" content="Civil3D"/>
 <meta property="og:image" content="/images/head.jpg">
 
-  <title>徐费皓苒 xfhrv.cn &ndash; Civil3D地形曲面生成与编辑处理（二）从等高线生成地形曲面</title>
+  <title>徐费皓苒 xfhrv.cn &ndash; Civil3D地形曲面生成与编辑处理（三）编辑处理</title>
 
 </head>
 <body>
@@ -116,9 +116,9 @@
 
 <article class="single">
   <header>
-    <h1 id="civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian">Civil3D地形曲面生成与编辑处理（二）从等高线生成地形曲面</h1>
+    <h1 id="civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-san-bian-ji-chu-li">Civil3D地形曲面生成与编辑处理（三）编辑处理</h1>
     <p>
-          Posted on 周三 15 三月 2017 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
+          Posted on 周四 16 三月 2017 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
 
 
     </p>
@@ -126,81 +126,81 @@
 
 
   <div>
-    <p><img alt="" src="/images/20170306110522.gif"></p>
-<h2>生成</h2>
-<p>咱们生成地形曲面其实方法有很多，我们就来看看两种最简单、常用的生成方法：<strong>从高程点</strong>和<strong>从等高线</strong>。</p>
-<p>我们还可以用Civil3D软件自动<strong>融合</strong>他们的信息，生成一个更加真实、平滑的地形曲面。</p>
-<p>那我们正式开始。</p>
-<p>首先我们需要有一个原始地形数据文件。一般来说总平图、方案布置图里有地形信息，我们可以稍微处理一下数据，将我们需要的高程点、等高线copy到新的文件中处理。这样做的好处是<strong>软件运转会更快</strong>，而且<strong>数据不易出错</strong>。</p>
-<p>处理数据后，我们会得到一个类似这样的数据：</p>
-<p><img alt="" src="/images/20170306161227.png"></p>
-<h4>从等高线</h4>
-<h6>原始等高线导出</h6>
-<p>判断等高线类型</p>
+    <h2>编辑处理</h2>
+<h4>删除错误高程点</h4>
+<h6>删除错误的高程点</h6>
 <blockquote>
-<p>查看特性</p>
-<p><img alt="" src="/images/20170315165851.gif"></p>
-<ul>
-<li>检查XYZ坐标数据是否正确</li>
-<li>主要查看是否具有Z坐标、标高信息</li>
-<li>查看等高线图层是否正确</li>
-<li>是否全部在一个图层里</li>
-</ul>
+<ol>
+<li>检查曲面</li>
+<li>找到错误的高程点</li>
+<li>选中并删除错误高程点</li>
+</ol>
 </blockquote>
-<p>将等高线拷贝到新文件</p>
+<h6>重新生成曲面</h6>
 <blockquote>
-<ul>
-<li>确保拷贝时选中所有的等高线</li>
-<li>将所有等高线拷贝到新文件</li>
-<li>使用选中类似对象工具</li>
-<li>在新文件中点击“粘贴到原坐标”</li>
-<li>空白处右键</li>
-<li>剪贴板</li>
-<li>粘贴到原坐标</li>
-</ul>
-<p><img alt="" src="/images/20170315170455.gif"></p>
-</blockquote>
-<h6>创建“曲面”</h6>
-<blockquote>
-<ul>
-<li>在新文件左侧的“工具空间”中找到“曲面”</li>
-<li>右键“创建曲面”</li>
-<li>创建“三角面曲面”</li>
-<li>确定</li>
-</ul>
-<p><img alt="" src="/images/20170315170716.gif"></p>
-</blockquote>
-<h6>使用“等高线”导入高程点信息</h6>
-<blockquote>
-<ul>
-<li>点击“+”展开“曲面”-&gt;“Surface(1) 或 曲面(1)”-&gt; "定义"</li>
-<li>找到“等高线”</li>
+<ol>
+<li>点击“+”展开“曲面”-&gt;“Surface(1) 或 曲面(1)”</li>
 <li>右键</li>
-<li>添加</li>
-<li>弹出“添加等高线数据”</li>
-<li>确定</li>
-<li>框选所有等高线</li>
-<li>空格 或 回车</li>
-</ul>
-<p><img alt="" src="/images/20170315170833.gif"></p>
+<li>重新生成</li>
+</ol>
 </blockquote>
-<h6>生成“曲面”</h6>
-<p>Civil3D自动生成曲面</p>
-<p><img alt="" src="/images/20170306164246.png"></p>
-<h6>查看生成的曲面</h6>
+<h4>用高程排除错误测量点</h4>
 <blockquote>
-<ul>
-<li>选中刚刚生成的曲面</li>
-<li>右键</li>
-<li>对象查看器</li>
-</ul>
-<p><img alt="" src="/images/20170306164605.gif"></p>
+<ol>
+<li>
+<p>点击“+”展开“曲面”-&gt;“Surface(1) 或 曲面(1)”</p>
+</li>
+<li>
+<p>右键-&gt;曲面特性</p>
+</li>
+<li>
+<p>弹出“曲面特性”设置框</p>
+</li>
+<li>
+<p>找到“定义”选项卡-&gt;查看“定义选项”</p>
+</li>
+<li>
+<p>点击“+”展开“生成”-&gt;找到“排除小于此值的高程”</p>
+</li>
+<li>
+<p>将“否”改为“是”</p>
+</li>
+<li>
+<p>找到“高程 &lt;”    -&gt;   设置一个合适的高程，如“1000米”</p>
+</li>
+<li>
+<p>点击“确定”关闭“曲面特性”设置框</p>
+</li>
+<li>
+<p>弹出“重新生成曲面”提示框</p>
+</li>
+<li>
+<p>点击“重新生成曲面”</p>
+</li>
+<li>
+<p>Civil3D自动排除“高程小于1000米”的“高程点”或“等高线”</p>
+<p><img alt="" src="/images/20170316203005.gif"></p>
+</li>
+</ol>
 </blockquote>
-<h4>Tips</h4>
-<h6>根据使用精度来确定数据详细程度</h6>
-<h6>点、线越密集数据越准确</h6>
-<h6>可以将点、线结合在一起</h6>
-<h6>如需要的精度不高，也可只使用等高线</h6>
+<h4>指定三角网边长去除不必要的自动连接线</h4>
+<blockquote>
+<ol>
+<li>点击“+”展开“曲面”-&gt;“Surface(1) 或 曲面(1)”</li>
+<li>右键-&gt;曲面特性</li>
+<li>弹出“曲面特性”设置框-&gt;找到“定义”选项卡-&gt;查看“定义选项”</li>
+<li>点击“+”展开“生成”</li>
+<li>找到“使用三角形最大边长”</li>
+<li>将“否”改为“是”</li>
+<li>找到“三角形最大边长”</li>
+<li>设置一个合适的高程，如“100米”</li>
+<li>点击“确定”关闭“曲面特性”设置框</li>
+<li>弹出“重新生成曲面”提示框</li>
+<li>点击“重新生成曲面”</li>
+<li>Civil3D自动去除“边长大于100米”三角形边</li>
+</ol>
+<p><img alt="" src="/images/20170316203151.gif"></p>
+</blockquote>
   </div>
   <div class="tag-cloud">
     <p>
