@@ -32,18 +32,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <meta name="author" content="徐费皓苒" />
-    <meta name="description" content="徐费皓苒\的博客" />
+<meta name="author" content="徐费皓苒" />
+<meta name="description" content="Dynamo国内资源太少，很多疑难杂症要么去官方论坛找，要么自己研究，我把我遇到的问题和解决方案放在这里供大家参考，希望可以给您带来帮助！" />
+<meta name="keywords" content="BIM, Dynamo">
 <meta property="og:site_name" content="徐费皓苒 xfhrv.cn"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="徐费皓苒 xfhrv.cn"/>
-<meta property="og:description" content="徐费皓苒\的博客"/>
+<meta property="og:title" content="Dynamo杂症：独立打开程序无3D界面、无法读取Excel文件"/>
+<meta property="og:description" content="Dynamo国内资源太少，很多疑难杂症要么去官方论坛找，要么自己研究，我把我遇到的问题和解决方案放在这里供大家参考，希望可以给您带来帮助！"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://xfhrv.cn"/>
+<meta property="og:url" content="http://xfhrv.cn/dynamoza-zheng-du-li-da-kai-cheng-xu-wu-3djie-mian-wu-fa-du-qu-excelwen-jian.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-03-30 17:22:00+08:00"/>
+<meta property="article:modified_time" content="2017-03-30 17:22:00+08:00"/>
+<meta property="article:author" content="http://xfhrv.cn/author/xu-fei-hao-ran.html">
+<meta property="article:section" content="技术"/>
+<meta property="article:tag" content="BIM"/>
+<meta property="article:tag" content="Dynamo"/>
 <meta property="og:image" content="/images/head.jpg">
 
-  <title>徐费皓苒 xfhrv.cn &ndash;     Tag BIM
-</title>
+  <title>徐费皓苒 xfhrv.cn &ndash; Dynamo杂症：独立打开程序无3D界面、无法读取Excel文件</title>
 
 </head>
 <body>
@@ -108,93 +114,85 @@
 
     </nav>
 
-
-
-<article>
+<article class="single">
   <header>
-    <h2><a href="http://xfhrv.cn/dynamoza-zheng-du-li-da-kai-cheng-xu-wu-3djie-mian-wu-fa-du-qu-excelwen-jian.html#dynamoza-zheng-du-li-da-kai-cheng-xu-wu-3djie-mian-wu-fa-du-qu-excelwen-jian">Dynamo杂症：独立打开程序无3D界面、无法读取Excel文件</a></h2>
+    <h1 id="dynamoza-zheng-du-li-da-kai-cheng-xu-wu-3djie-mian-wu-fa-du-qu-excelwen-jian">Dynamo杂症：独立打开程序无3D界面、无法读取Excel文件</h1>
     <p>
           Posted on 周四 30 三月 2017 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
 
 
-          &#8226;     Tagged with
-
-              <a href="http://xfhrv.cn/tag/bim.html">BIM</a>,              <a href="http://xfhrv.cn/tag/dynamo.html">Dynamo</a>
     </p>
   </header>
+
+
   <div>
-      <p>Dynamo国内资源太少，很多疑难杂症要么去官方论坛找，要么自己研究，我把我遇到的问题和解决方案放在这里供大家参考，希望可以给您带来帮助！</p>
-      <br>
-      <a class="btn" href="http://xfhrv.cn/dynamoza-zheng-du-li-da-kai-cheng-xu-wu-3djie-mian-wu-fa-du-qu-excelwen-jian.html#dynamoza-zheng-du-li-da-kai-cheng-xu-wu-3djie-mian-wu-fa-du-qu-excelwen-jian">    Continue reading
-</a>
+    <p>Dynamo国内资源太少，很多疑难杂症要么去官方论坛找，要么自己研究，我把我遇到的问题和解决方案放在这里供大家参考，希望可以给您带来帮助！</p>
+<p>今天我分享一下我遇到的两个问题：</p>
+<ol>
+<li>独立打开Dynamo程序无法显示3D界面，3D Watch无法预览；</li>
+<li>读取Excel文件无法读取，提示"警告:一个或多个输入类型不匹配。找不到采用类型 (string,string,bool) 参数的 ReadFromFile 的版本"。</li>
+</ol>
+<p>ok，下面是解决方案。</p>
+<h3>问题一：独立打开Dynamo程序无法显示3D界面，3D Watch无法预览</h3>
+<p>有些朋友会遇到这样一个问题：通过Revit 2017里的按钮点击打开Dynamo，它一切正常；如果不打开Revit，单独开启Dynamo，它的3D界面就一片空白，3D Watch也一片空白，什么也不能看，什么也不能做。</p>
+<p>通过Revit打开正常：</p>
+<p><img alt="" src="/images/20170330174009.png"></p>
+<p>单独打开就像这样：</p>
+<p><img alt="" src="/images/20170330173700.png"></p>
+<p><em>WTF！！！什么也没有！！！</em></p>
+<p><strong>问题剖析：</strong>单独开启Dynamo时没有打开显卡的3D加速，问题多出现与双显卡的机器。</p>
+<p><strong>解决方案：</strong>打开显卡的3D加速功能。</p>
+<p>我的电脑是Intel核心集成显卡+NVIDIA独立显卡，默认打开Dynamo是使用的集成显卡，没有开启3D加速功能，所以导致Dynamo会这么神经，什么也不显示。解决起来也非常简单，把Dynamo添加到独立显卡的程序列表里就可以了。</p>
+<p>NVIDIA显卡的朋友们：</p>
+<p><img alt="" src="/images/20170330174858.gif"></p>
+<dl>
+<dt>AMD显卡我不太清楚，如果出现这种情况，可以尝试类似解决方案。</dt>
+<dd>
+<p>D</p>
+</dd>
+</dl>
+<h3>问题二：读取Excel文件无法读取，提示警告信息</h3>
+<p>这个问题是这样的，当你用 <code>File Path -&gt; Excel.ReadFromFile</code> 的时候，会发现文件无法读取，就像这样：</p>
+<p><img alt="" src="/images/20170330175159.png"></p>
+<p>这个问题也会给大家带来一些困惑。</p>
+<p><strong>问题剖析：</strong>我查了一下Dynamo官方论坛的，有人分析是因为路径地址存在空格，导致路径读取不正确。</p>
+<p><strong>解决方案：</strong>“加工”一下路径，使用 <code>"%20"</code>替换<code>" "</code></p>
+<ol>
+<li>添加一个 Code Block 填入代码 <code>String.Replace(parsepath,"%20", " ");</code></li>
+<li>添加一个 <code>File.FromPath</code></li>
+<li>将<code>File Path -&gt; Code Block -&gt; File.FromPath -&gt;Excel.ReadFromFile</code>串起来</li>
+<li>搞定！</li>
+</ol>
+<p>如图：</p>
+<p><img alt="" src="/images/20170330180021.png"></p>
+<p>Code Block 代码：</p>
+<div class="highlight"><pre><span></span>String.Replace(parsepath,&quot;%20&quot;, &quot; &quot;);
+</pre></div>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-san-bian-ji-chu-li.html#civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-san-bian-ji-chu-li">Civil3D地形曲面生成与编辑处理（三）编辑处理</a></h2>
+  <div class="tag-cloud">
     <p>
-          Posted on 周四 16 三月 2017 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="http://xfhrv.cn/tag/bim.html">BIM</a>,              <a href="http://xfhrv.cn/tag/civil3d.html">Civil3D</a>
+      <a href="http://xfhrv.cn/tag/bim.html">BIM</a>
+      <a href="http://xfhrv.cn/tag/dynamo.html">Dynamo</a>
     </p>
-  </header>
-  <div>
-      <p>Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~</p>
-      <br>
-      <a class="btn" href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-san-bian-ji-chu-li.html#civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-san-bian-ji-chu-li">    Continue reading
-</a>
   </div>
-  <hr />
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'xfhrv-cn';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+        Please enable JavaScript to view comments.
+
+</noscript>
 </article>
-<article>
-  <header>
-    <h2><a href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian.html#civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian">Civil3D地形曲面生成与编辑处理（二）从等高线生成地形曲面</a></h2>
-    <p>
-          Posted on 周三 15 三月 2017 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="http://xfhrv.cn/tag/bim.html">BIM</a>,              <a href="http://xfhrv.cn/tag/civil3d.html">Civil3D</a>
-    </p>
-  </header>
-  <div>
-      <p>Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~</p>
-      <br>
-      <a class="btn" href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian.html#civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-er-cong-deng-gao-xian-sheng-cheng-di-xing-qu-mian">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-yi-cong-gao-cheng-dian-sheng-cheng-di-xing-qu-mian.html#civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-yi-cong-gao-cheng-dian-sheng-cheng-di-xing-qu-mian">Civil3D地形曲面生成与编辑处理（一）从高程点生成地形曲面</a></h2>
-    <p>
-          Posted on 周一 06 三月 2017 in <a href="http://xfhrv.cn/category/ji-zhu.html">技术</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="http://xfhrv.cn/tag/bim.html">BIM</a>,              <a href="http://xfhrv.cn/tag/civil3d.html">Civil3D</a>
-    </p>
-  </header>
-  <div>
-      <p>Civil3D基础系列教程，GIF动图+文字，清晰易懂，跟我操作就可以啦~</p>
-      <br>
-      <a class="btn" href="http://xfhrv.cn/civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-yi-cong-gao-cheng-dian-sheng-cheng-di-xing-qu-mian.html#civil3ddi-xing-qu-mian-sheng-cheng-yu-bian-ji-chu-li-yi-cong-gao-cheng-dian-sheng-cheng-di-xing-qu-mian">    Continue reading
-</a>
-  </div>
-</article>
-
-  <div class="pagination">
-  </div>
-
-
-
 
     <footer>
 <p>
